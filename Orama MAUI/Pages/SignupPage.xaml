@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Orama_MAUI.Pages.SignupPage"
+             Shell.NavBarIsVisible="False"
+             Padding="30">
+    <VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10">
+            <Image/>
+            <Label Text="Orama" FontSize="40" TextColor="Blue"/>
+        </HorizontalStackLayout>
+        <Label Text="Only email registration is supported in your region." Margin="5"/>
+
+        <!---     Credential Entries            -->
+        <VerticalStackLayout Spacing="20">
+            <Frame Padding="5">
+                <HorizontalStackLayout>
+                    <Image Source="email.png" WidthRequest="25"/>
+                    <Entry x:Name="SignEmailEntry" Placeholder="Email address" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                </HorizontalStackLayout>
+            </Frame>
+            <Frame Padding="5">
+                <HorizontalStackLayout>
+                    <Image Source="password.png" WidthRequest="25"/>
+                    <Entry x:Name="SignPasswordEntry1" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
+                </HorizontalStackLayout>
+            </Frame>
+            <Frame Padding="5">
+                <HorizontalStackLayout>
+                    <Image Source="password.png" WidthRequest="25"/>
+                    <Entry x:Name="SignPasswordEntry2" Placeholder="Confirm password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
+                </HorizontalStackLayout>
+            </Frame>
+            <HorizontalStackLayout Spacing="15">
+                <Frame Padding="0">
+                    <HorizontalStackLayout>
+                        <Image Source="hash.png" WidthRequest="20" Margin="5,0"/>
+                        <Entry Placeholder="Code" WidthRequest="190" FontSize="20"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Padding="0">
+                    <Button Background="Transparent" Text="Send Code" TextColor="Black" FontSize="20" Padding="5" Clicked="Button_Clicked"/>
+                </Frame>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <!-- Checkbox text   -->
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox />
+            <Label Grid.Column="1">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="I confirm that I have read, consent and agree to Orama's "/>
+                        <Span Text="Terms of Use" TextDecorations="Underline"/>
+                        <Span Text=" and "/>
+                        <Span Text="Privacy Policy" TextDecorations="Underline"/>
+                        <Span Text="."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+
+        <Button Text="Sign up" FontSize="20" Clicked="Button_Clicked_1"/>
+        <!--  Contact us/log in-->
+        <HorizontalStackLayout Spacing="210" Margin="0,10">
+            <Label Text="Contact us" FontSize="15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Log in" TextColor="blue" FontSize="15" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

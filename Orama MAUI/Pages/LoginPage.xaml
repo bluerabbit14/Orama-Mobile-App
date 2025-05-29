@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Orama_MAUI.Pages.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Padding="25">
+    <VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Image/>
+            <Label Text="Orama" TextColor="blue" FontSize="40"/>
+        </HorizontalStackLayout>
+        <!--                  -->
+        <VerticalStackLayout Padding="10">
+            <Label Text="Only login via Email,Google,or +91 phone number is supported in your region." FontSize="13"/>
+        </VerticalStackLayout>
+
+        <!---     Credential Entries            -->
+        <VerticalStackLayout Spacing="20">
+            <Frame Padding="5">
+                <HorizontalStackLayout>
+                    <Image Source="email.png" WidthRequest="25"/>
+                    <Entry x:Name="LoginEmailEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                </HorizontalStackLayout>
+            </Frame>
+            <Frame Padding="5">
+                <HorizontalStackLayout>
+                    <Image Source="password.png" WidthRequest="25"/>
+                    <Entry x:Name="LoginPasswordEntry" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
+                </HorizontalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+        
+        <!-- Checkbox text   -->
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox />
+            <Label Grid.Column="1">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="I confirm that I have read, consent and agree to Orama's "/>
+                        <Span Text="Terms of Use" TextDecorations="Underline"/>
+                        <Span Text=" and "/>
+                        <Span Text="Privacy Policy" TextDecorations="Underline"/>
+                        <Span Text="."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+
+        <!--  Login button -->
+        <Button Text="Log in" FontSize="20" Clicked="Button_Clicked"/>
+        
+        
+        <!--  other login options   -->
+        <HorizontalStackLayout Spacing="180" Margin="10">
+            <Label Text="Forgot password?" TextColor="blue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Forgotpassword_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Sign up" TextColor="blue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Signup_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+        <VerticalStackLayout VerticalOptions="End">
+            <HorizontalStackLayout>
+                <BoxView WidthRequest="160" HeightRequest="1" />
+                <Label Text="or" Margin="10" FontSize="18"/>
+                <BoxView WidthRequest="160" HeightRequest="1" />
+            </HorizontalStackLayout>
+
+            <Frame>
+                <HorizontalStackLayout HorizontalOptions="Center" >
+                    <Image Source="google.png" WidthRequest="17"/>
+                    <Label Text="Sign in with Google" FontSize="17" Margin="10,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Label Text="Contact us" HorizontalOptions="Center" Margin="8" FontSize="15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer />
+                </Label.GestureRecognizers>
+            </Label>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
