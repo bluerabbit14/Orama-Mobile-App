@@ -3,7 +3,7 @@ namespace Orama_API.Model.Domain
 {
     public class Users
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid UserId { get; set; } = Guid.NewGuid();
         public string? Email { get; set; }
         public string? Phone { get; set; }  // Supports international formats
         public string? Username { get; set; }
@@ -17,7 +17,7 @@ namespace Orama_API.Model.Domain
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
         public bool IsActive { get; set; } = true;
-        public string Role { get; set; } = "user";
+        public string RoleId { get; set; }
 
     }
 }

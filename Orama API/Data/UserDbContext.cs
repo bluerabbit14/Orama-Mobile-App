@@ -20,8 +20,8 @@ namespace Orama_API.Data
 
             modelBuilder.Entity<Users>(entity =>
             {
-                entity.HasKey(u => u.Id);
-                entity.Property(u => u.Id).ValueGeneratedOnAdd();
+                entity.HasKey(u => u.UserId);
+                entity.Property(u => u.UserId).ValueGeneratedOnAdd();
                 entity.Property(u => u.Email);
                 entity.Property(u => u.Phone);
                 entity.Property(u => u.Username);
@@ -31,20 +31,20 @@ namespace Orama_API.Data
                 entity.Property(u => u.CreatedAt).IsRequired().HasDefaultValueSql("CURRENT_TIMESTAMP");
                 entity.Property(u => u.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
                 entity.Property(u => u.IsActive).HasDefaultValue(true);
-                entity.Property(u => u.Role).HasDefaultValue("user");
+                entity.Property(u => u.RoleId);
             });
 
             modelBuilder.Entity<Roles>(entity =>
             {
-                entity.HasKey(u => u.Id);
-                entity.Property(u => u.Id).ValueGeneratedOnAdd().UseIdentityColumn(seed:1,increment:1);
+                entity.HasKey(u => u.RoleId);
+                entity.Property(u => u.RoleId).ValueGeneratedOnAdd().UseIdentityColumn(seed:1,increment:1);
                 entity.Property(u => u.Name).IsRequired();
             });
 
             modelBuilder.Entity<UserLogins>(entity =>
             {
-                entity.HasKey(u => u.Id);
-                entity.Property(u => u.Id).ValueGeneratedOnAdd();
+                entity.HasKey(u => u.LoginId);
+                entity.Property(u => u.LoginId).ValueGeneratedOnAdd();
                 entity.Property(u => u.UserId);
                 entity.Property(u => u.LoginTime).HasDefaultValue("CURRENT_TIMESTAMP");
                 entity.Property(u => u.IpAddress);
@@ -53,8 +53,8 @@ namespace Orama_API.Data
 
             modelBuilder.Entity<PasswordResetTokens>(entity =>
             {
-                entity.HasKey(u => u.Id);
-                entity.Property(u => u.Id).ValueGeneratedOnAdd();
+                entity.HasKey(u => u.ResetId);
+                entity.Property(u => u.ResetId).ValueGeneratedOnAdd();
                 entity.Property(u => u.UserId);
                 entity.Property(u => u.Token).IsRequired();
                 entity.Property(u => u.ExpiresAt);
@@ -64,8 +64,8 @@ namespace Orama_API.Data
 
             modelBuilder.Entity<UserVerifications>(entity =>
             {
-                entity.HasKey(u => u.Id);
-                entity.Property(u => u.Id).ValueGeneratedOnAdd();
+                entity.HasKey(u => u.VerificationId);
+                entity.Property(u => u.VerificationId).ValueGeneratedOnAdd();
                 entity.Property(u => u.UserId);
                 entity.Property(u => u.ContactType);
                 entity.Property(u => u.ContactValue);
