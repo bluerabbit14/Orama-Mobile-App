@@ -1,17 +1,16 @@
-﻿
-
-namespace Orama_API.Model.Domain
+﻿namespace Orama_API.Model.Domain
 {
-    public class PasswordResetTokens
-    {
-        public Guid ResetId { get; set; } = Guid.NewGuid();
-        public Guid UserId { get; set; }
-        public string Token { get; set; } = null!;
-        public DateTime ExpiresAt { get; set; }
+        public class PasswordResetTokens
+        {
+            public Guid ResetId { get; set; }
+            public Guid UserId { get; set; }
 
-        public bool IsUsed { get; set; } = false;
+            public string Token { get; set; }
+            public DateTime ExpiresAt { get; set; }
+            public bool IsUsed { get; set; }
+            public DateTime CreatedAt { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+            public Users User { get; set; }
+        }
 
-    }
 }

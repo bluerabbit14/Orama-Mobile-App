@@ -1,23 +1,26 @@
-﻿
+﻿using System.Data;
+
 namespace Orama_API.Model.Domain
 {
     public class Users
     {
-        public Guid UserId { get; set; } = Guid.NewGuid();
-        public string? Email { get; set; }
-        public string? Phone { get; set; }  // Supports international formats
-        public string? Username { get; set; }
-        public string PasswordHash { get; set; } = null!;
+        public Guid UserId { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string UserName { get; set; }
+        public string PasswordHash { get; set; }
+        public bool IsEmailVerified { get; set; }
+        public bool IsPhoneVerified { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public bool IsActive { get; set; }
 
-        public bool? IsEmailVerified { get; set; } = false;
+        public int RoleId { get; set; }
+        public Roles Role { get; set; }
 
-        public bool? IsPhoneVerified { get; set; } = false;
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-
-        public bool IsActive { get; set; } = true;
-        public string RoleId { get; set; }
+        public ICollection<UserLogins> UserLogins { get; set; }
+        public ICollection<UserVerifications> UserVerifications { get; set; }
+        public ICollection<PasswordResetTokens> PasswordResetTokens { get; set; }
 
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace Orama_API.Model.Domain
+﻿namespace Orama_API.Model.DTO.RoleDTO
 {
-    public class Roles
+    public class RoleDTO
     {
         public int RoleId { get; set; }
         public string Name { get; set; }

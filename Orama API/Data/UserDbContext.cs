@@ -20,61 +20,127 @@ namespace Orama_API.Data
 
             modelBuilder.Entity<Users>(entity =>
             {
+                entity.ToTable("Users");
                 entity.HasKey(u => u.UserId);
-                entity.Property(u => u.UserId).ValueGeneratedOnAdd();
-                entity.Property(u => u.Email);
-                entity.Property(u => u.Phone);
-                entity.Property(u => u.Username);
-                entity.Property(u => u.PasswordHash).IsRequired();
-                entity.Property(u => u.IsEmailVerified).HasDefaultValue(false);
-                entity.Property(u => u.IsPhoneVerified).HasDefaultValue(false);
-                entity.Property(u => u.CreatedAt).IsRequired().HasDefaultValueSql("CURRENT_TIMESTAMP");
-                entity.Property(u => u.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
-                entity.Property(u => u.IsActive).HasDefaultValue(true);
-                entity.Property(u => u.RoleId);
+                entity.Property(u => u.UserId)
+                      .HasDefaultValueSql("NEWID()");
+                entity.Property(u => u.Email)
+                      .HasMaxLength(255);
+                entity.HasIndex(u => u.Email)
+                      .IsUnique();
+                entity.Property(u => u.Phone)
+                      .HasMaxLength(20);
+                entity.HasIndex(u => u.Phone)
+                      .IsUnique();
+                entity.Property(u => u.UserName)
+                      .HasMaxLength(100);
+                entity.Property(u => u.PasswordHash)
+                      .IsRequired()
+                      .HasMaxLength(512);
+                entity.Property(u => u.IsEmailVerified)
+                      .HasDefaultValue(false);
+                entity.Property(u => u.IsPhoneVerified)
+                      .HasDefaultValue(false);
+                entity.Property(u => u.CreatedAt)
+                      .HasDefaultValueSql("GETDATE()");
+                entity.Property(u => u.UpdatedAt)
+                      .HasDefaultValueSql("GETDATE()");
+                entity.Property(u => u.IsActive)
+                      .HasDefaultValue(true);
+
+                entity.HasOne(u => u.Role)
+                      .WithMany()
+                      .HasForeignKey(u => u.RoleId)
+                      .OnDelete(DeleteBehavior.Restrict); // optional: prevent cascade delete
             });
 
             modelBuilder.Entity<Roles>(entity =>
             {
-                entity.HasKey(u => u.RoleId);
-                entity.Property(u => u.RoleId).ValueGeneratedOnAdd().UseIdentityColumn(seed:1,increment:1);
-                entity.Property(u => u.Name).IsRequired();
+                entity.ToTable("Roles");
+                entity.HasKey(r => r.RoleId);
+                entity.Property(r => r.RoleId)
+                      .ValueGeneratedOnAdd()
+                      .UseIdentityColumn(seed: 1, increment: 1); ; // For IDENTITY(1,1)
+                entity.Property(r => r.Name)
+                      .IsRequired()
+                      .HasMaxLength(50);
+                entity.HasIndex(r => r.Name)
+                      .IsUnique();
             });
 
             modelBuilder.Entity<UserLogins>(entity =>
             {
-                entity.HasKey(u => u.LoginId);
-                entity.Property(u => u.LoginId).ValueGeneratedOnAdd();
-                entity.Property(u => u.UserId);
-                entity.Property(u => u.LoginTime).HasDefaultValue("CURRENT_TIMESTAMP");
-                entity.Property(u => u.IpAddress);
-                entity.Property(u => u.DeviceInfo);
+                entity.ToTable("UserLogins");
+                entity.HasKey(l => l.LoginId);
+                entity.Property(l => l.LoginId)
+                      .HasDefaultValueSql("NEWID()");
+                entity.Property(l => l.LoginTime)
+                      .IsRequired();
+                entity.Property(l => l.IpAddress)
+                      .HasMaxLength(45);
+                entity.Property(l => l.DeviceInfo)
+                      .HasMaxLength(255);
+
+                entity.HasOne(l => l.User)
+                      .WithMany() // or .WithMany(u => u.UserLogins) if you add a navigation property in `User`
+                      .HasForeignKey(l => l.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<PasswordResetTokens>(entity =>
             {
-                entity.HasKey(u => u.ResetId);
-                entity.Property(u => u.ResetId).ValueGeneratedOnAdd();
-                entity.Property(u => u.UserId);
-                entity.Property(u => u.Token).IsRequired();
-                entity.Property(u => u.ExpiresAt);
-                entity.Property(u => u.IsUsed).HasDefaultValue(false);
-                entity.Property(u => u.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+                entity.ToTable("PasswordResetTokens");
+                entity.HasKey(p => p.ResetId);
+                entity.Property(p => p.ResetId)
+                      .HasDefaultValueSql("NEWID()");
+                entity.Property(p => p.Token)
+                      .IsRequired()
+                      .HasMaxLength(512);
+                entity.Property(p => p.ExpiresAt)
+                      .IsRequired();
+                entity.Property(p => p.IsUsed)
+                      .HasDefaultValue(false);
+                entity.Property(p => p.CreatedAt)
+                      .HasDefaultValueSql("GETDATE()");
+
+                entity.HasOne(p => p.User)
+                      .WithMany(u => u.PasswordResetTokens) // or WithMany(u => u.PasswordResetTokens)
+                      .HasForeignKey(p => p.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<UserVerifications>(entity =>
             {
-                entity.HasKey(u => u.VerificationId);
-                entity.Property(u => u.VerificationId).ValueGeneratedOnAdd();
-                entity.Property(u => u.UserId);
-                entity.Property(u => u.ContactType);
-                entity.Property(u => u.ContactValue);
-                entity.Property(u => u.VerificationCode);
-                entity.Property(u => u.CodeType);
-                entity.Property(u => u.Purpose);
-                entity.Property(u => u.ExpiresAt);
-                entity.Property(u => u.IsUsed).HasDefaultValue(false);
-                entity.Property(u => u.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+                entity.ToTable("UserVerifications");
+                entity.HasKey(v => v.VerificationId);
+                entity.Property(v => v.VerificationId)
+                      .HasDefaultValueSql("NEWID()");
+                entity.Property(v => v.ContactType)
+                      .IsRequired()
+                      .HasMaxLength(10);
+                entity.Property(v => v.ContactValue)
+                      .IsRequired()
+                      .HasMaxLength(255);
+                entity.Property(v => v.VerificationCode)
+                      .IsRequired()
+                      .HasMaxLength(100);
+                entity.Property(v => v.CodeType)
+                      .IsRequired()
+                      .HasMaxLength(20);
+                entity.Property(v => v.Purpose)
+                      .IsRequired()
+                      .HasMaxLength(30);
+                entity.Property(v => v.ExpiresAt)
+                      .IsRequired();
+                entity.Property(v => v.IsUsed)
+                      .HasDefaultValue(false);
+                entity.Property(v => v.CreatedAt)
+                      .HasDefaultValueSql("GETDATE()");
+
+                entity.HasOne(v => v.User)
+                      .WithMany(u => u.UserVerifications) // Or .WithMany(u => u.UserVerifications) if you want navigation
+                      .HasForeignKey(v => v.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
 
         }
