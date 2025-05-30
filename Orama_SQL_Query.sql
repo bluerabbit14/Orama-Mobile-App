@@ -1,0 +1,77 @@
+CREATE TABLE Roles (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Users (
+    Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    Email VARCHAR(255) NOT NULL UNIQUE,
+    UserName VARCHAR(100) NOT NULL,
+    PasswordHash VARCHAR(512) NOT NULL,
+    IsEmailVerified BIT DEFAULT 0,
+    IsPhoneVerified BIT DEFAULT 0,
+    CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
+    UpdatedAt DATETIME NULL,
+    IsActive BIT NOT NULL DEFAULT 1,
+    RoleId INT NOT NULL,
+
+    CONSTRAINT FK_Users_Roles FOREIGN KEY (RoleId)
+        REFERENCES Roles(Id)
+);
+
+CREATE TABLE RefreshTokens (
+    Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    UserId UNIQUEIDENTIFIER NOT NULL,
+    Token VARCHAR(512) NOT NULL,
+    ExpiresAt DATETIME NOT NULL,
+    IsRevoked BIT DEFAULT 0,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    CONSTRAINT FK_RefreshTokens_Users FOREIGN KEY (UserId)
+        REFERENCES Users(Id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE PasswordResetTokens (
+    Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    UserId UNIQUEIDENTIFIER NOT NULL,
+    Token VARCHAR(512) NOT NULL,
+    ExpiresAt DATETIME NOT NULL,
+    IsUsed BIT DEFAULT 0,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    CONSTRAINT FK_PasswordResetTokens_Users FOREIGN KEY (UserId)
+        REFERENCES Users(Id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE UserLogins (
+    Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    UserId UNIQUEIDENTIFIER NOT NULL,
+    LoginType VARCHAR(50) NOT NULL,
+    ProviderKey VARCHAR(255) NOT NULL,
+    PasswordHash VARCHAR(512) NULL,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    IsActive BIT DEFAULT 1,
+
+    CONSTRAINT FK_UserLogins_Users FOREIGN KEY (UserId)
+        REFERENCES Users(Id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT UQ_UserLogins_LoginType_ProviderKey UNIQUE (LoginType, ProviderKey)
+);
+
+CREATE TABLE UserVerifications (
+    Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    UserId UNIQUEIDENTIFIER NOT NULL,
+    ContactType VARCHAR(10) NOT NULL CHECK (ContactType IN ('Email', 'Phone')),
+    ContactValue VARCHAR(255) NOT NULL,
+    VerificationCode VARCHAR(100) NOT NULL,
+    CodeType VARCHAR(20) NOT NULL CHECK (CodeType IN ('Token', 'OTP')),
+    Purpose VARCHAR(30) NOT NULL CHECK (Purpose IN ('AccountVerification', 'PasswordReset')),
+    ExpiresAt DATETIME NOT NULL,
+    IsUsed BIT DEFAULT 0,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+
+    CONSTRAINT FK_UserVerifications_Users FOREIGN KEY (UserId)
+        REFERENCES Users(Id)
+        ON DELETE CASCADE
+);
