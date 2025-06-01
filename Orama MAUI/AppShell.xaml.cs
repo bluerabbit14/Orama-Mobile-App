@@ -10,6 +10,7 @@ namespace Orama_MAUI
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(SignupPage), typeof(SignupPage));
             Routing.RegisterRoute(nameof(ForgotpasswordPage), typeof(ForgotpasswordPage));
+            Routing.RegisterRoute(nameof(ContactusPage), typeof(ContactusPage));
         }
     }
 }

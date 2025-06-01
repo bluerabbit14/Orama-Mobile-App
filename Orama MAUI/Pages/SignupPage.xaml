@@ -4,54 +4,70 @@
              x:Class="Orama_MAUI.Pages.SignupPage"
              Shell.NavBarIsVisible="False"
              Padding="30">
+<!-- Sign up Feature-->    
     <VerticalStackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10">
-            <Image/>
-            <Label Text="Orama" FontSize="40" TextColor="Blue"/>
-        </HorizontalStackLayout>
-        <Label Text="Only email registration is supported in your region." Margin="5"/>
 
-        <!---     Credential Entries            -->
-        <VerticalStackLayout Spacing="20">
-            <Frame Padding="5">
+        <HorizontalStackLayout x:Name="Orama_Title" HorizontalOptions="Center">
+            <Image Source="orama.png" WidthRequest="45"/>
+            <Label Text="Orama" FontSize="40" TextColor="Black"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout x:Name="Page_instruction" Padding="25">
+            <Label Text="Only login via Email,Google,or +91 phone number is supported in your region." FontSize="13"/>
+        </VerticalStackLayout>
+
+        <Grid x:Name="Signup_Credential_Entry" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" Padding="5">
                 <HorizontalStackLayout>
                     <Image Source="email.png" WidthRequest="25"/>
-                    <Entry x:Name="SignEmailEntry" Placeholder="Email address" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                    <Entry x:Name="EmailEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Padding="5">
+            <Frame Grid.Row="1" Padding="5">
                 <HorizontalStackLayout>
                     <Image Source="password.png" WidthRequest="25"/>
-                    <Entry x:Name="SignPasswordEntry1" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
+                    <Entry x:Name="PasswordEntry1" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Padding="5">
+            <Frame Grid.Row="2" Padding="5">
                 <HorizontalStackLayout>
                     <Image Source="password.png" WidthRequest="25"/>
-                    <Entry x:Name="SignPasswordEntry2" Placeholder="Confirm password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
+                    <Entry x:Name="PasswordEntry2" Placeholder="Confirm password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <HorizontalStackLayout Spacing="15">
+            <HorizontalStackLayout Grid.Row="3" Spacing="18">
                 <Frame Padding="0">
                     <HorizontalStackLayout>
                         <Image Source="hash.png" WidthRequest="20" Margin="5,0"/>
-                        <Entry Placeholder="Code" WidthRequest="190" FontSize="20"/>
+                        <Entry x:Name="CodeEntry" Placeholder="Code" Keyboard="Numeric" MaxLength="4" WidthRequest="200" FontSize="20"/>
                     </HorizontalStackLayout>
                 </Frame>
                 <Frame Padding="0">
-                    <Button Background="Transparent" Text="Send Code" TextColor="Black" FontSize="20" Padding="5" Clicked="Button_Clicked"/>
+                    <Button Text="Send Code" FontSize="18" Padding="5" Clicked="SendButton_Clicked"/>
                 </Frame>
             </HorizontalStackLayout>
-        </VerticalStackLayout>
+        </Grid>
 
-        <!-- Checkbox text   -->
-        <Grid Margin="10">
+        <Grid x:Name="Term_and_Condition_Checkbox" Padding="10" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
-            <CheckBox />
-            <Label Grid.Column="1">
+
+            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0"/>
+
+            <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="I confirm that I have read, consent and agree to Orama's "/>
@@ -64,17 +80,17 @@
             </Label>
         </Grid>
 
-        <Button Text="Sign up" FontSize="20" Clicked="Button_Clicked_1"/>
+        <Button Text="Sign up" FontSize="20" Clicked="SignupButton_Clicked"/>
         <!--  Contact us/log in-->
         <HorizontalStackLayout Spacing="210" Margin="0,10">
-            <Label Text="Contact us" FontSize="15">
+            <Label Text="Contact us" FontSize="16" TextDecorations="Underline" TextColor="blue">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Tapped="Contactus_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Log in" TextColor="blue" FontSize="15" FontAttributes="Bold">
+            <Label Text="Log in" TextColor="blue" FontSize="16">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                    <TapGestureRecognizer Tapped="Login_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
         </HorizontalStackLayout>

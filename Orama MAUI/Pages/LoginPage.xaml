@@ -4,40 +4,50 @@
              x:Class="Orama_MAUI.Pages.LoginPage"
              Shell.NavBarIsVisible="False"
              Padding="25">
+<!--   Login Feature-->
     <VerticalStackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Image/>
-            <Label Text="Orama" TextColor="blue" FontSize="40"/>
+        
+        <HorizontalStackLayout x:Name="Orama_Title" HorizontalOptions="Center">
+            <Image Source="orama.png" WidthRequest="45"/>
+            <Label Text="Orama" TextColor="Black" FontSize="40"/>
         </HorizontalStackLayout>
-        <!--                  -->
-        <VerticalStackLayout Padding="10">
+       
+        <VerticalStackLayout x:Name="Page_instruction" Padding="25">
             <Label Text="Only login via Email,Google,or +91 phone number is supported in your region." FontSize="13"/>
         </VerticalStackLayout>
 
-        <!---     Credential Entries            -->
-        <VerticalStackLayout Spacing="20">
-            <Frame Padding="5">
+        <Grid x:Name="Login_Credential_Entry" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" Padding="5">
                 <HorizontalStackLayout>
                     <Image Source="email.png" WidthRequest="25"/>
-                    <Entry x:Name="LoginEmailEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                    <Entry x:Name="EmailEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Padding="5">
+            <Frame Grid.Row="1"  Padding="5">
                 <HorizontalStackLayout>
                     <Image Source="password.png" WidthRequest="25"/>
-                    <Entry x:Name="LoginPasswordEntry" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
+                    <Entry x:Name="PasswordEntry" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-        </VerticalStackLayout>
+        </Grid>
         
-        <!-- Checkbox text   -->
-        <Grid Margin="10">
+        <Grid x:Name="Term_and_Condition_Checkbox" Padding="10" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
-            <CheckBox />
-            <Label Grid.Column="1">
+            
+            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0"/>
+            
+            <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="I confirm that I have read, consent and agree to Orama's "/>
@@ -50,44 +60,42 @@
             </Label>
         </Grid>
 
-        <!--  Login button -->
-        <Button Text="Log in" FontSize="20" Clicked="Button_Clicked"/>
+        <Button x:Name="Login_button" Text="Log in" FontSize="20" Clicked="LoginButton_Clicked" Margin="10"/>
         
-        
-        <!--  other login options   -->
-        <HorizontalStackLayout Spacing="180" Margin="10">
-            <Label Text="Forgot password?" TextColor="blue">
+        <HorizontalStackLayout x:Name="Others" Spacing="150" Margin="10">
+            <Label Text="Forgot password?" TextColor="blue" FontSize="16">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Forgotpassword_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Sign up" TextColor="blue">
+            <Label Text="Sign up" TextColor="blue" FontSize="16">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Signup_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
         </HorizontalStackLayout>
-        <VerticalStackLayout VerticalOptions="End">
+
+        <VerticalStackLayout x:Name="Separator"  VerticalOptions="End">
             <HorizontalStackLayout>
                 <BoxView WidthRequest="160" HeightRequest="1" />
                 <Label Text="or" Margin="10" FontSize="18"/>
                 <BoxView WidthRequest="160" HeightRequest="1" />
             </HorizontalStackLayout>
 
-            <Frame>
+            <Frame x:Name="Google_signin_option" IsEnabled="False">
                 <HorizontalStackLayout HorizontalOptions="Center" >
                     <Image Source="google.png" WidthRequest="17"/>
                     <Label Text="Sign in with Google" FontSize="17" Margin="10,0">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            <TapGestureRecognizer />
                         </Label.GestureRecognizers>
                     </Label>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Label Text="Contact us" HorizontalOptions="Center" Margin="8" FontSize="15">
+            <Label Text="Contact Us" TextColor="Blue" HorizontalOptions="Center" Margin="8" FontSize="16" TextDecorations="Underline">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer />
+                    <TapGestureRecognizer Tapped="Contactus_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
         </VerticalStackLayout>

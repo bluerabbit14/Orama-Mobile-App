@@ -1,4 +1,5 @@
-using System.Threading.Tasks;
+using Orama_MAUI.Model;
+
 
 namespace Orama_MAUI.Pages;
 
@@ -9,22 +10,52 @@ public partial class ForgotpasswordPage : ContentPage
 		InitializeComponent();
 	}
 
-    private async void Login_Tapped(object sender, TappedEventArgs e)
+    private void Login_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new LoginPage());
+        Navigation.PushAsync(new LoginPage());
     }
-    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+
+    private void ConfirmButton_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Contact us", "will config later", "OK");
+        var reset = new ForgotPassword();
+
+        string emailValue = EmailEntry.Text?.Trim();
+        string codeValue = CodeEntry.Text?.Trim();
+
+        if (string.IsNullOrWhiteSpace(emailValue))
+        {
+            DisplayAlert("Forgot Password", "Email cannot be an empty field", "ok");
+            return;
+        }
+        else
+        {
+            if (!emailValue.Contains("@"))
+            {
+                DisplayAlert("Forgot Password", "Enter a valid Email Address", "ok");
+                return;
+            }
+        }
+        if (string.IsNullOrWhiteSpace(codeValue))
+        {
+            DisplayAlert("Forgot Password", "Code is required for Email Verification", "ok");
+            return;
+        } 
+        if (emailValue.Contains("@"))
+        {
+            reset.Email = emailValue;
+            reset.Code = codeValue;
+        }
+        string message = $"Email: {reset.Email}\nCode: {reset.Code}";
+        DisplayAlert("Forgot Password", message, "Ok");
+    }
+
+    private void Contactus_Tapped(object sender, TappedEventArgs e)
+    {
+        Navigation.PushAsync(new ContactusPage());
     }
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("Contact us", "will config later", "OK");
-    }
-
-    private void Button_Clicked_1(object sender, EventArgs e)
-    {
-        DisplayAlert("Contact us", "will config later", "OK");
+        DisplayAlert("Forgot Password", "will config later", "Ok");
     }
 }

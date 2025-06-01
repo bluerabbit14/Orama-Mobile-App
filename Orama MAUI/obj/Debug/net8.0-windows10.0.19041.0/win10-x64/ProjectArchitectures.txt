@@ -1,0 +1,1 @@
+D:\Orama Mobile App\Orama MAUI\Orama MAUI.csproj;x64
