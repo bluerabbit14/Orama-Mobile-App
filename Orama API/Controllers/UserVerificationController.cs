@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Orama_API.Data;
 using Orama_API.Model.Domain;
+using Orama_API.Model.DTO.UserVerificationDTO;
 
 namespace Orama_API.Controllers
 {
@@ -15,15 +17,8 @@ namespace Orama_API.Controllers
             _context = context;
         }
 
-        [HttpGet("user/{userId}")]
-        public async Task<IActionResult> GetByUser(Guid userId)
-        {
-            var data = await _context.UserVerifications.Where(v => v.UserId == userId).ToListAsync();
-            return Ok(data);
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Create(UserVerification verification)
+        public async Task<IActionResult> Create(UserVerifications verification)
         {
             verification.CreatedAt = DateTime.UtcNow;
             _context.UserVerifications.Add(verification);

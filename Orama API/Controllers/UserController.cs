@@ -27,7 +27,7 @@ namespace Orama_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(User user)
+        public async Task<IActionResult> Create(Users user)
         {
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
@@ -35,7 +35,7 @@ namespace Orama_API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, User user)
+        public async Task<IActionResult> Update(Guid id, Users user)
         {
             if (id != user.UserId) return BadRequest();
             _context.Entry(user).State = EntityState.Modified;

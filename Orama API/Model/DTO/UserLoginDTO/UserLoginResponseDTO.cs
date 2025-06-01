@@ -5,7 +5,7 @@
         public Guid LoginId { get; set; }
         public Guid UserId { get; set; }
         public DateTime LoginTime { get; set; }
-        public string IpAddress { get; set; }
-        public string DeviceInfo { get; set; }
+        public string? IpAddress { get; set; } = null;
+        public string? DeviceInfo { get; set; } = null;
     }
 }

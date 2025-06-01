@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Orama_API.Data;
 using Orama_API.Model.Domain;
 
@@ -15,11 +16,8 @@ namespace Orama_API.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetLogins() => Ok(await _context.UserLogins.Include(l => l.User).ToListAsync());
-
         [HttpPost]
-        public async Task<IActionResult> Create(UserLogin login)
+        public async Task<IActionResult> Create(UserLogins login)
         {
             login.LoginTime = DateTime.UtcNow;
             _context.UserLogins.Add(login);

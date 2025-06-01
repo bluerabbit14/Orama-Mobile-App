@@ -27,7 +27,7 @@ namespace Orama_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Role role)
+        public async Task<IActionResult> Create(Roles role)
         {
             _context.Roles.Add(role);
             await _context.SaveChangesAsync();
@@ -35,7 +35,7 @@ namespace Orama_API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Role role)
+        public async Task<IActionResult> Update(int id, Roles role)
         {
             if (id != role.RoleId) return BadRequest();
 

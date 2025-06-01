@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Orama_API.Data;
 using Orama_API.Model.Domain;
 
@@ -16,7 +17,7 @@ namespace Orama_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(PasswordResetToken token)
+        public async Task<IActionResult> Create(PasswordResetTokens token)
         {
             token.CreatedAt = DateTime.UtcNow;
             _context.PasswordResetTokens.Add(token);
@@ -24,12 +25,17 @@ namespace Orama_API.Controllers
             return Ok(token);
         }
 
-        [HttpGet("user/{userId}")]
+        [HttpGet("tokens/{userId}")]
         public async Task<IActionResult> GetTokensForUser(Guid userId)
         {
+            var userExists = await _context.Users.AnyAsync(u => u.UserId == userId);
+            if (!userExists)
+                return NotFound($"User with ID {userId} not found.");
+
             var tokens = await _context.PasswordResetTokens
                                        .Where(t => t.UserId == userId)
                                        .ToListAsync();
+
             return Ok(tokens);
         }
 
