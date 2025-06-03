@@ -3,6 +3,11 @@ build_property.EnableAotAnalyzer =
 build_property.EnableSingleFileAnalyzer = 
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = false
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = 
+build_property.CsWinRTAotWarningLevel = 
 build_property.TargetFramework = net8.0-ios
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -30,17 +35,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[D:/Orama Mobile App/Orama MAUI/Pages/AboutusPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.AboutusPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AboutusPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AboutusPage.xaml
+
 [D:/Orama Mobile App/Orama MAUI/Pages/ContactusPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.ContactusPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\ContactusPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\ContactusPage.xaml
 
-[D:/Orama Mobile App/Orama MAUI/Pages/DashboardPage.xaml]
+[D:/Orama Mobile App/Orama MAUI/Pages/FeedbackPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.DashboardPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\DashboardPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\DashboardPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.FeedbackPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FeedbackPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FeedbackPage.xaml
 
 [D:/Orama Mobile App/Orama MAUI/Pages/ForgotpasswordPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -48,11 +59,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.Forgotpas
 build_metadata.AdditionalFiles.TargetPath = Pages\ForgotpasswordPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\ForgotpasswordPage.xaml
 
+[D:/Orama Mobile App/Orama MAUI/Pages/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\HomePage.xaml
+
 [D:/Orama Mobile App/Orama MAUI/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
+
+[D:/Orama Mobile App/Orama MAUI/Pages/PrivacypolicyPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.PrivacypolicyPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PrivacypolicyPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PrivacypolicyPage.xaml
 
 [D:/Orama Mobile App/Orama MAUI/Pages/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
