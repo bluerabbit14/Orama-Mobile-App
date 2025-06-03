@@ -1,5 +1,5 @@
 
-using Orama_MAUI.Model;
+using Orama_MAUI.Objects;
 
 namespace Orama_MAUI.Pages;
 public partial class LoginPage : ContentPage

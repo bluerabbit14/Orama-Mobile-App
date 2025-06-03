@@ -1,4 +1,4 @@
-using Orama_MAUI.Model;
+using Orama_MAUI.Objects;
 
 
 namespace Orama_MAUI.Pages;

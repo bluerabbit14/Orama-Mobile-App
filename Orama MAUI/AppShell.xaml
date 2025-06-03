@@ -3,14 +3,50 @@
     x:Class="Orama_MAUI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Orama_MAUI"
     xmlns:pages="clr-namespace:Orama_MAUI.Pages"
-    Shell.FlyoutBehavior="Disabled"
-    Title="Orama MAUI">
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:LoginPage}"
-        Route="LoginPage" />
+    <!-- Flyout Header -->
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="50" Padding="5">
+            <Label Text="Dashboard" TextColor="White" HorizontalTextAlignment="Center" FontSize="25"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
 
+    <!-- Flyout Footer -->
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="30">
+            <Label Text="Version 0.0" TextColor="White" HorizontalTextAlignment="Center" FontSize="18"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
+    <!-- ✅ FLYOUT ONLY PAGES -->
+    <FlyoutItem Title="Home" Icon="home.png">
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate pages:HomePage}" Route="HomePage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Profile" Icon="profile1.png">
+        <ShellContent Title="Profile" ContentTemplate="{DataTemplate pages:ProfilePage}" Route="ProfilePage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings" Icon="setting1.png">
+        <ShellContent Title="Settings" ContentTemplate="{DataTemplate pages:SettingPage}" Route="SettingPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Contact Us" Icon="call1.png">
+        <ShellContent Title="Contact Us" ContentTemplate="{DataTemplate pages:ContactusPage}" Route="ContactusPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Privacy Policy" Icon="privacy2.png">
+        <ShellContent Title="Privacy Policy" ContentTemplate="{DataTemplate pages:PrivacypolicyPage}" Route="PrivacypolicyPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Feedback" Icon="feedback.png">
+        <ShellContent Title="Feedback" ContentTemplate="{DataTemplate pages:FeedbackPage}" Route="FeedBackPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="About Us" Icon="about.png">
+        <ShellContent Title="About Us" ContentTemplate="{DataTemplate pages:AboutusPage}" Route="AboutusPage" />
+    </FlyoutItem>
+    
 </Shell>

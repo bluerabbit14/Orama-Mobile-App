@@ -1,5 +1,4 @@
-﻿
-namespace Orama_MAUI.Model
+﻿namespace Orama_MAUI.Objects
 {
     internal class Signup
     {
