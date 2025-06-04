@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Orama Mobile App\\Orama API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama mobile app\\orama api\\controllers\\subscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:controllers\\subscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 240,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SubscriptionController.cs",
+              "DocumentMoniker": "D:\\Orama Mobile App\\Orama API\\Controllers\\SubscriptionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SubscriptionController.cs",
+              "ToolTip": "D:\\Orama Mobile App\\Orama API\\Controllers\\SubscriptionController.cs",
+              "RelativeToolTip": "Controllers\\SubscriptionController.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAkwFcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T12:26:36.891Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

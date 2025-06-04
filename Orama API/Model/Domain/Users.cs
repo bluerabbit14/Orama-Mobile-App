@@ -14,13 +14,9 @@ namespace Orama_API.Model.Domain
         public DateTime CreatedAt { get; set; }
         public DateTime LastUpdated { get; set; }
         public bool IsActive { get; set; } = true;
+        public string? Role { get; set; } = "user";
+        public int? SubscriptionId { get; set; }
 
-        public int? RoleId { get; set; }
-        public Roles Role { get; set; }
-
-        public ICollection<UserLogins> UserLogins { get; set; }
-        public ICollection<UserVerifications> UserVerifications { get; set; }
-        public ICollection<PasswordResetTokens> PasswordResetTokens { get; set; }
-
+        public Subscriptions? Subscription { get; set; }  //user can have only one subscription at a time
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Orama_API.Data;
-using Orama_API.Model.Domain;
+using Orama_API.Model.DTO;
 
 namespace Orama_API.Controllers
 {
@@ -17,42 +17,149 @@ namespace Orama_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers() => Ok(await _context.Users.Include(u => u.Role).ToListAsync());
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetUser(Guid id)
+        public async Task<IActionResult> GetUsers()
         {
-            var user = await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.UserId == id);
-            return user == null ? NotFound() : Ok(user);
+            var users = await _context.User
+            .Include(u => u.Subscription)
+            .Select(u => new UserResponseDTO
+            {
+                UserId = u.UserId,
+                Email = u.Email,
+                Phone = u.Phone,
+                UserName = u.UserName,
+                PasswordHash = u.PasswordHash,
+                IsEmailVerified = u.IsEmailVerified,
+                IsPhoneVerified = u.IsPhoneVerified,
+                CreatedAt = u.CreatedAt,
+                LastUpdated = u.LastUpdated,
+                IsActive = u.IsActive,
+                Role = u.Role,
+                SubscriptionId = u.SubscriptionId,
+                SubscriptionPlan = u.Subscription != null ? u.Subscription.SubscriptionPlan : null
+            })
+            .ToListAsync();
+            return Ok(users);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create(Users user)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserByID(Guid id)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetUser), new { id = user.UserId }, user);
+            var user = await _context.User
+                .Where(u => u.UserId == id)
+                .Select(u => new UserResponseDTO
+                {
+                    UserId = u.UserId,
+                    Email = u.Email,
+                    Phone = u.Phone,
+                    UserName = u.UserName,
+                    PasswordHash = u.PasswordHash,
+                    IsEmailVerified = u.IsEmailVerified,
+                    IsPhoneVerified = u.IsPhoneVerified,
+                    CreatedAt = u.CreatedAt,
+                    LastUpdated = u.LastUpdated,
+                    IsActive = u.IsActive,
+                    Role = u.Role,
+                    SubscriptionId = u.SubscriptionId,
+                    SubscriptionPlan = u.Subscription != null ? u.Subscription.SubscriptionPlan : null
+                })
+                .FirstOrDefaultAsync();
+            if (user == null)
+                return NotFound();
+            return Ok(user);
+        }
+
+        [HttpGet("by-identifier")]
+        public async Task<IActionResult> GetUserByIdentifier([FromQuery] string identifier)
+        {
+            var user = await _context.User
+                .Where(u => u.Email == identifier || u.Phone == identifier)
+                .Select(u => new UserResponseDTO
+                {
+                    UserId = u.UserId,
+                    Email = u.Email,
+                    Phone = u.Phone,
+                    UserName = u.UserName,
+                    PasswordHash = u.PasswordHash,
+                    IsEmailVerified = u.IsEmailVerified,
+                    IsPhoneVerified = u.IsPhoneVerified,
+                    CreatedAt = u.CreatedAt,
+                    LastUpdated = u.LastUpdated,
+                    IsActive = u.IsActive,
+                    Role = u.Role,
+                    SubscriptionId = u.SubscriptionId,
+                    SubscriptionPlan = u.Subscription != null ? u.Subscription.SubscriptionPlan : null
+                })
+                .FirstOrDefaultAsync();
+
+            if (user == null)
+                return NotFound("User not found.");
+            return Ok(user);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, Users user)
-        {
-            if (id != user.UserId) return BadRequest();
-            _context.Entry(user).State = EntityState.Modified;
+        public async Task<IActionResult> UpdateUser(UserUpdateDTO dto, Guid id)
+        { 
+            var user = await _context.User.FindAsync(id);
+            if (user == null)
+                return NotFound("User not found.");
+
+            // Only update fields if values are provided
+            if (!string.IsNullOrWhiteSpace(dto.Email))
+                user.Email = dto.Email;
+
+            if (!string.IsNullOrWhiteSpace(dto.Phone))
+                user.Phone = dto.Phone;
+
+            if (!string.IsNullOrWhiteSpace(dto.UserName))
+                user.UserName = dto.UserName;
+
+            user.LastUpdated = DateTime.UtcNow;
+
+            _context.User.Update(user);
             await _context.SaveChangesAsync();
-            return NoContent();
+
+            return Ok(new
+            {
+                Message = "User updated successfully.",
+                UserId = user.UserId
+            });
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        [HttpPut("UpdatePassword/{credential}")]
+        public async Task<IActionResult> UpdatePassword(PasswordUpdateDTO dto, string credential)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null) return NotFound();
+            var user = await _context.User.FirstOrDefaultAsync(u => u.Email == credential || u.Phone == credential);
 
-            _context.Users.Remove(user);
+            if (user == null)
+                return NotFound("User not found.");
+
+            user.PasswordHash = dto.PasswordHash; // Consider hashing here
+            user.LastUpdated = DateTime.UtcNow;
+
+            _context.User.Update(user);
             await _context.SaveChangesAsync();
-            return NoContent();
+
+            return Ok(new
+            {
+                Message = "Password updated successfully.",
+                UserId = user.UserId
+            });
+        }
+
+        [HttpDelete("Delete/{id}")]
+        public async Task<IActionResult> DeleteUser(Guid id)
+        {
+            var user = await _context.User.FindAsync(id);
+            if (user == null)
+                return NotFound("User not found.");
+            _context.User.Remove(user);
+
+            await _context.SaveChangesAsync();
+            return Ok(new
+            {
+                Message = "User deleted successfully.",
+                UserId = id
+            });
         }
     }
-
 }
