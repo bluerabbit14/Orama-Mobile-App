@@ -6,4 +6,9 @@ public partial class PrivacypolicyPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async  void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        await DisplayAlert("Contact us", "Navigate to gmail dashboard !", "Ok");
+    }
 }

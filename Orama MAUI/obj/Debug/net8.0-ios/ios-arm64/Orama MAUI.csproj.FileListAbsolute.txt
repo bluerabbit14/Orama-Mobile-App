@@ -1,14 +1,22 @@
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Orama MAUI.runtimeconfig.json
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Orama MAUI.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Orama MAUI.pdb
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\CommunityToolkit.Maui.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\CommunityToolkit.Maui.Core.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\CommunityToolkit.Mvvm.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Configuration.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Configuration.Binder.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.DependencyInjection.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Diagnostics.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Http.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Logging.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Logging.Debug.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Options.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Extensions.Primitives.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Maui.Controls.Compatibility.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Maui.Controls.dll
@@ -16,6 +24,12 @@ D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Maui.Con
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Maui.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Maui.Essentials.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.Maui.Graphics.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Newtonsoft.Json.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\SkiaSharp.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\SkiaSharp.Views.iOS.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\SkiaSharp.Views.Maui.Controls.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\SkiaSharp.Views.Maui.Core.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Diagnostics.DiagnosticSource.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\ar\Microsoft.Maui.Controls.resources.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\ca\Microsoft.Maui.Controls.resources.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\cs\Microsoft.Maui.Controls.resources.dll
@@ -50,6 +64,9 @@ D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\vi\Microsoft.Maui.
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\zh-HK\Microsoft.Maui.Controls.resources.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\zh-Hans\Microsoft.Maui.Controls.resources.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\zh-Hant\Microsoft.Maui.Controls.resources.dll
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Info.plist
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\CodeResources
+D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\libSkiaSharp
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.CSharp.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.VisualBasic.Core.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\Microsoft.VisualBasic.dll
@@ -76,7 +93,6 @@ D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Data.DataSe
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Data.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Diagnostics.Contracts.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Diagnostics.Debug.dll
-D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Diagnostics.DiagnosticSource.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Diagnostics.FileVersionInfo.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Diagnostics.Process.dll
 D:\Orama Mobile App\Orama MAUI\bin\Debug\net8.0-ios\ios-arm64\System.Diagnostics.StackTrace.dll
@@ -268,11 +284,21 @@ D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\sp\spl
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\mauisplash.stamp
-D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\orama.png
-D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\email.png
-D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\password.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\privacy2.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\about.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\profile1.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\call1.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\profile2.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\call2.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\profile3.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\google.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\setting1.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\empty.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\setting2.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\feedback.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\streetpic.jpg
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\hash.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\email.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
@@ -285,6 +311,12 @@ D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Asse
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\password.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\id.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\home.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\orfox.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\privacy1.png
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\r\Resources\orama.png
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\mauiimage.stamp
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\mauiimage.outputs
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\resizetizer\f\MauiInfo.plist
@@ -314,3 +346,4 @@ D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\refint\Orama MAUI.
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\Orama MAUI.pdb
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\Orama MAUI.genruntimeconfig.cache
 D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\ref\Orama MAUI.dll
+D:\Orama Mobile App\Orama MAUI\obj\Debug\net8.0-ios\ios-arm64\build-signature\signature

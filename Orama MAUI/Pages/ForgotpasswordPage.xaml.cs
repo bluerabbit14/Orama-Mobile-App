@@ -1,5 +1,3 @@
-using Orama_MAUI.Objects;
-
 
 namespace Orama_MAUI.Pages;
 
@@ -12,43 +10,8 @@ public partial class ForgotpasswordPage : ContentPage
 
     private void Login_Tapped(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new LoginPage());
+        Application.Current.MainPage = new NavigationPage(new LoginPage());
     }
-
-    private void ConfirmButton_Clicked(object sender, EventArgs e)
-    {
-        var reset = new ForgotPassword();
-
-        string emailValue = EmailEntry.Text?.Trim();
-        string codeValue = CodeEntry.Text?.Trim();
-
-        if (string.IsNullOrWhiteSpace(emailValue))
-        {
-            DisplayAlert("Forgot Password", "Email cannot be an empty field", "ok");
-            return;
-        }
-        else
-        {
-            if (!emailValue.Contains("@"))
-            {
-                DisplayAlert("Forgot Password", "Enter a valid Email Address", "ok");
-                return;
-            }
-        }
-        if (string.IsNullOrWhiteSpace(codeValue))
-        {
-            DisplayAlert("Forgot Password", "Code is required for Email Verification", "ok");
-            return;
-        } 
-        if (emailValue.Contains("@"))
-        {
-            reset.Email = emailValue;
-            reset.Code = codeValue;
-        }
-        string message = $"Email: {reset.Email}\nCode: {reset.Code}";
-        DisplayAlert("Forgot Password", message, "Ok");
-    }
-
     private void Contactus_Tapped(object sender, TappedEventArgs e)
     {
         Navigation.PushAsync(new ContactusPage());
@@ -57,5 +20,35 @@ public partial class ForgotpasswordPage : ContentPage
     private void Button_Clicked(object sender, EventArgs e)
     {
         DisplayAlert("Forgot Password", "will config later", "Ok");
+    }
+
+    private async void VerifyButton_Clicked(object sender, EventArgs e)
+    {
+        string IdValue = IdEntry.Text?.Trim();
+        if (string.IsNullOrWhiteSpace(IdValue))
+        {
+            IdEntryFrame.BorderColor = Colors.Red;
+            DisplayAlert("Forgot Password", "Email cannot be an empty field", "ok");
+            return;
+        }
+        if (!string.IsNullOrWhiteSpace(IdValue))
+        {
+            IdEntryFrame.BorderColor = Colors.Gray;
+        }
+
+        if (IdValue.Contains("@") && IdValue.Contains(".") || IdValue.Length == 10 && IdValue.All(char.IsDigit))
+        {
+            //API Integretion will be done here !! 
+            //First It check email/number is registered or not
+            //Second it will send a OTP to the particular email/number
+
+
+            await DisplayAlert("Forgot Password", $"OTP is send to {IdValue}.\nIt is Valid for 5 min", "ok");
+        }
+
+        else
+        {
+            await DisplayAlert("Forgot Password", $"{IdValue} is neither a Email Address nor a phone number", "ok");
+        }
     }
 }

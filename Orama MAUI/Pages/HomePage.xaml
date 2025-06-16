@@ -1,32 +1,57 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Orama_MAUI.Pages.HomePage"
-             Title="Home">
-    <ScrollView>
+             x:Class="Orama_MAUI.Pages.HomePage">
+     <ScrollView>
         <VerticalStackLayout Padding="10">
-
-            <!-- ✅ CarouselView with ItemsSource bound -->
+            <!--  ✅ CarouselView with ItemsSource bound  -->
             <CarouselView x:Name="HomeCarousel"
                           ItemsSource="{Binding Items}"
-                          IndicatorView="HomeIndicator">
+                          IndicatorView="HomeIndicator"
+                          HeightRequest="140">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout Padding="10">
-                            <Label Text="{Binding Value}"
-                                   FontSize="20"
-                                   HorizontalOptions="Center"/>
-                        </VerticalStackLayout>
+                        <Frame WidthRequest="350">
+                            <Label Text="{Binding Url}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="25"/>
+                        </Frame>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-
-            <!-- ✅ IndicatorView must be linked to Carousel -->
-            <IndicatorView x:Name="HomeIndicator"
-                           Margin="10"
+            <!-- ✅ IndicatorView must be linked to Carousel  --> 
+             <IndicatorView x:Name="HomeIndicator"
                            HorizontalOptions="Center"
-                           IndicatorColor="Green"
-                           SelectedIndicatorColor="Red"/>
+                           Margin="10"
+                           IndicatorColor="gray"
+                           SelectedIndicatorColor="black"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Grid.Column="0" Margin="10" HeightRequest="180">
+                    <Label Text="card 1"/>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="1" Margin="10" HeightRequest="180">
+                    <Label Text="card 2"/>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" Margin="10" HeightRequest="180">
+                    <Label Text="card 3"/>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="1" Margin="10" HeightRequest="180">
+                    <Label Text="card 4"/>
+                </Frame>
+                <Frame Grid.Row="2" Grid.Column="0" Margin="10" HeightRequest="180">
+                    <Label Text="card 5"/>
+                </Frame>
+                <Frame Grid.Row="2" Grid.Column="1" Margin="10" HeightRequest="180">
+                    <Label Text="card 6"/>
+                </Frame>
+            </Grid>
         </VerticalStackLayout>
-    </ScrollView>
+    </ScrollView> 
 </ContentPage>

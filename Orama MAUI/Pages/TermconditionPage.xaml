@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Orama_MAUI.Pages.TermconditionPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0,30,50" Spacing="12">
+
+            <Label Text="📄 Terms and Conditions" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" />
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Effective Date: 13 June,2025" FontSize="14" />
+                <Label Text="App Name: Orama" FontSize="14" />
+            </VerticalStackLayout>
+            
+
+            <Label Text="1. Acceptance of Terms" FontAttributes="Bold" FontSize="18" />
+            <Label Text="By using Orama, you agree to these Terms. If you do not agree, please do not use the app." FontSize="14" />
+
+            <Label Text="2. Use of the App" FontAttributes="Bold" FontSize="18" />
+            <VerticalStackLayout Spacing="5">
+                <Label Text="You agree to:" FontSize="14" />
+                <Label Text="• Use the app only for lawful purposes" FontSize="14" />
+                <Label Text="• Not misuse or harm the app or its users" FontSize="14" />
+                <Label Text="• Keep your login credentials secure" FontSize="14" />
+            </VerticalStackLayout>
+            
+            <Label Text="3. User Content" FontAttributes="Bold" FontSize="18" />
+            <VerticalStackLayout Spacing="5">
+                <Label Text="If the app allows you to post content (e.g., comments, uploads):" FontSize="14" />
+                <Label Text="• You retain ownership of your content" FontSize="14" />
+                <Label Text="• You grant us a license to use it for app operations" FontSize="14" />
+            </VerticalStackLayout>
+           
+            <Label Text="4. Intellectual Property" FontAttributes="Bold" FontSize="18" />
+            <Label Text="All trademarks, logos, and content are the property of Orama App. You may not reuse them without permission." FontSize="14" />
+
+            <Label Text="5. Termination" FontAttributes="Bold" FontSize="18" />
+            <VerticalStackLayout Spacing="5">
+                <Label Text="We may suspend or terminate your access to the app if:" FontSize="14" />
+                <Label Text="• You violate these terms" FontSize="14" />
+                <Label Text="• You misuse the app" FontSize="14" />
+            </VerticalStackLayout>
+           
+            <Label Text="6. Disclaimer" FontAttributes="Bold" FontSize="18" />
+            <VerticalStackLayout>
+                <Label Text="The app is provided “as is.” We are not responsible for:" FontSize="14" />
+                <Label Text="• Any data loss" FontSize="14" />
+                <Label Text="• Third-party service issues" FontSize="14" />
+                <Label Text="• Indirect damages" FontSize="14" />
+            </VerticalStackLayout>
+            
+            <Label Text="7. Governing Law" FontAttributes="Bold" FontSize="18" />
+            <Label Text="These terms are governed by the laws of India. Any disputes shall be handled in the appropriate courts of that jurisdiction." FontSize="14" />
+
+            <Label Text="8. Contact Us" FontAttributes="Bold" FontSize="18" />
+            <VerticalStackLayout Spacing="5">
+                <Label Text="For any questions regarding these terms" FontSize="14" />
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="contact:" FontSize="14"/>
+                    <Label Text="📧 14jamesparzival@gmail.com" FontSize="14" TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+      
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

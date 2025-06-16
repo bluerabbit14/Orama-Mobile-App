@@ -39,12 +39,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/Orama Mobile App/Orama MAUI/Pages/AboutusPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.AboutusPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\AboutusPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\AboutusPage.xaml
-
 [D:/Orama Mobile App/Orama MAUI/Pages/ContactusPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.ContactusPage.xaml
@@ -98,6 +92,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.SignupPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\SignupPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\SignupPage.xaml
+
+[D:/Orama Mobile App/Orama MAUI/Pages/TermconditionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Orama_MAUI.Pages.TermconditionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\TermconditionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\TermconditionPage.xaml
 
 [D:/Orama Mobile App/Orama MAUI/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

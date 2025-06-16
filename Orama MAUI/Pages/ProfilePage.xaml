@@ -3,7 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Orama_MAUI.Pages.ProfilePage"
              Title="Profile">
-    <VerticalStackLayout>
-        
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="30,10">
+            <!-- Profile Picture Section -->
+                <Frame Padding="0" HeightRequest="140" WidthRequest="140"
+                       CornerRadius="70" HasShadow="True" BackgroundColor="White">
+                    <Image Aspect="AspectFill" HeightRequest="120" WidthRequest="120"/>
+                </Frame>
+            <Button Text="Edit Photo" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#007AFF"
+                    BackgroundColor="Transparent" Clicked="Button_Clicked"/>
+            <VerticalStackLayout Spacing="10">
+                <!-- Name -->
+                <Frame Padding="10,0">
+                    <HorizontalStackLayout>
+                        <Label Text="Name: " VerticalOptions="Center"/>
+                        <Entry x:Name="NameField" Placeholder="Enter your name" Text="{Binding Name}" IsReadOnly="False"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <!-- Email -->
+                <Frame Padding="10,0">
+                    <HorizontalStackLayout>
+                        <Label Text="Email: " VerticalOptions="Center"/>
+                        <Entry x:Name="EmailField" Placeholder="Enter your email" Text="{Binding Email}" IsReadOnly="False"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <!-- Phone -->
+                <Frame Padding="10,0">
+                    <HorizontalStackLayout>
+                        <Label Text="Phone: " VerticalOptions="Center"/>
+                        <Entry x:Name="PhoneField" Placeholder="Enter you phone" Text="{Binding Phone}" IsReadOnly="False"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <!-- Address -->
+                <Frame Padding="10,0">
+                    <HorizontalStackLayout>
+                        <Label Text="Address: " VerticalOptions="Center"/>
+                        <Entry x:Name="AddressField" Placeholder="Enter your Addess" Text="{Binding Address}" IsReadOnly="False"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Grid ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- Date of Birth -->
+                    <Frame Grid.Row="0" Grid.Column="0" Padding="10,0">
+                        <HorizontalStackLayout>
+                            <Label Text="DOB: " VerticalOptions="Center"/>
+                            <DatePicker x:Name="DOBPicker" Date="{Binding Dob}" IsEnabled="True"/>
+                        </HorizontalStackLayout>
+                    </Frame>
+                    <!-- Gender Picker -->
+                    <Frame Grid.Row="0" Grid.Column="1" Padding="10,0">
+                        <HorizontalStackLayout>
+                            <Label Text="Gender: " VerticalOptions="Center"/>
+                            <Picker x:Name="genderPicker" Title="Select gender"  IsEnabled="True">
+                                <Picker.Items>
+                                    <x:String>Male</x:String>
+                                    <x:String>Female</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </Grid>
+                <Frame Padding="10,0">
+                    <HorizontalStackLayout>
+                        <Label Text="Password: " VerticalOptions="Center"/>
+                        <Entry x:Name="PasswordField" Placeholder="Enter your Password" Text="{Binding Password}" IsReadOnly="False"/>
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

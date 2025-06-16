@@ -24,35 +24,25 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="0" Padding="5">
+            <Frame Grid.Row="0" Padding="5" x:Name="EmailEntryFrame">
                 <HorizontalStackLayout>
                     <Image Source="email.png" WidthRequest="25"/>
-                    <Entry x:Name="EmailEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                    <Entry x:Name="IdEntry" Placeholder="Email/ +91 Phone Number" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Grid.Row="1" Padding="5">
+            <Frame Grid.Row="1" Padding="5" x:Name="PasswordEntry1Frame">
                 <HorizontalStackLayout>
                     <Image Source="password.png" WidthRequest="25"/>
                     <Entry x:Name="PasswordEntry1" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Grid.Row="2" Padding="5">
+            <Frame Grid.Row="2" Padding="5" x:Name="PasswordEntry2Frame">
                 <HorizontalStackLayout>
                     <Image Source="password.png" WidthRequest="25"/>
                     <Entry x:Name="PasswordEntry2" Placeholder="Confirm password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <HorizontalStackLayout Grid.Row="3" Spacing="18">
-                <Frame Padding="0">
-                    <HorizontalStackLayout>
-                        <Image Source="hash.png" WidthRequest="20" Margin="5,0"/>
-                        <Entry x:Name="CodeEntry" Placeholder="Code" Keyboard="Numeric" MaxLength="4" WidthRequest="200" FontSize="20"/>
-                    </HorizontalStackLayout>
-                </Frame>
-                <Frame Padding="0">
-                    <Button Text="Send Code" FontSize="18" Padding="5" Clicked="SendButton_Clicked"/>
-                </Frame>
-            </HorizontalStackLayout>
+            
         </Grid>
 
         <Grid x:Name="Term_and_Condition_Checkbox" Padding="10" >
@@ -65,15 +55,23 @@
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
 
-            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0"/>
+            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0" Color="blue" CheckedChanged="Checkbox_CheckedChanged"/>
 
             <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="I confirm that I have read, consent and agree to Orama's "/>
-                        <Span Text="Terms of Use" TextDecorations="Underline"/>
+                        <Span Text="Terms of Use" TextDecorations="Underline" TextColor="blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TermCondition_Tapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
                         <Span Text=" and "/>
-                        <Span Text="Privacy Policy" TextDecorations="Underline"/>
+                        <Span Text="Privacy Policy" TextDecorations="Underline" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="PrivacyPolicy_Tapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
                         <Span Text="."/>
                     </FormattedString>
                 </Label.FormattedText>
@@ -83,7 +81,7 @@
         <Button Text="Sign up" FontSize="20" Clicked="SignupButton_Clicked"/>
         <!--  Contact us/log in-->
         <HorizontalStackLayout Spacing="210" Margin="0,10">
-            <Label Text="Contact us" FontSize="16" TextDecorations="Underline" TextColor="blue">
+            <Label Text="Contact us" FontSize="16" TextColor="blue">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Contactus_Tapped"/>
                 </Label.GestureRecognizers>

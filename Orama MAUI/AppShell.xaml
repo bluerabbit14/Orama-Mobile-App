@@ -8,15 +8,20 @@
 
     <!-- Flyout Header -->
     <Shell.FlyoutHeader>
-        <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="50" Padding="5">
+        <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="45" Padding="5">
             <Label Text="Dashboard" TextColor="White" HorizontalTextAlignment="Center" FontSize="25"/>
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
 
     <!-- Flyout Footer -->
     <Shell.FlyoutFooter>
-        <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="30">
-            <Label Text="Version 0.0" TextColor="White" HorizontalTextAlignment="Center" FontSize="18"/>
+        <VerticalStackLayout HeightRequest="100" Spacing="22">
+            <Frame BorderColor="Red" Padding="0" Margin="20,0">
+                <Button Text="Logout" Clicked="OnLogoutClicked" TextColor="Red" BackgroundColor="Transparent" FontSize="18"/>
+            </Frame>
+            <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="40" Padding="5">
+                <Label Text="Version 0.0" TextColor="White" FontSize="14" HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
 
@@ -45,8 +50,8 @@
         <ShellContent Title="Feedback" ContentTemplate="{DataTemplate pages:FeedbackPage}" Route="FeedBackPage" />
     </FlyoutItem>
 
-    <FlyoutItem Title="About Us" Icon="about.png">
-        <ShellContent Title="About Us" ContentTemplate="{DataTemplate pages:AboutusPage}" Route="AboutusPage" />
-    </FlyoutItem>
+    <!--- <TabBar>
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate pages:HomePage}" Route="HomePage" />
+    </TabBar>  -->
     
 </Shell>

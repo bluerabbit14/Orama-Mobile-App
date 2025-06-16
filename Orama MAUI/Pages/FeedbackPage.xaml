@@ -7,9 +7,10 @@
              xmlns:models="clr-namespace:Orama_MAUI.Models"
              Title="Feedback">
     <VerticalStackLayout>
+        
         <VerticalStackLayout Padding="15" Spacing="10" Margin="5">
-            <Frame Padding="10">
-                <Picker x:Name="PerformanceAreaPicker" Title="Type of feedback" FontSize="18" SelectedItem="{Binding Feedback.Type}">
+            <Frame Padding="5">
+                <Picker x:Name="PerformanceAreaPicker" Title="Type of feedback" FontSize="15" SelectedItem="{Binding Feedback.Type}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Bug Report</x:String>
@@ -21,22 +22,26 @@
                 </Picker>
             </Frame>
             <Frame Padding="5">
-                <Entry x:Name="TitleEntry" Placeholder="Title" FontSize="20" Text="{Binding Feedback.Title}"/>
+                <Entry x:Name="TitleEntry" Placeholder="Title" FontSize="15" Text="{Binding Feedback.Title}"/>
             </Frame>
             <Frame Padding="5">
-                <Editor x:Name="DescriptionEntry" Placeholder="Description" HeightRequest="150" FontSize="20" AutoSize="TextChanges" Text="{Binding Feedback.Description}"/>
+                <Editor x:Name="DescriptionEntry" Placeholder="Description" HeightRequest="140" FontSize="16" AutoSize="TextChanges" Text="{Binding Feedback.Description}"/>
             </Frame>
             <Button Text="Submit" FontSize="20" Command="{Binding AddCommand}"/>
         </VerticalStackLayout>
-        <CollectionView ItemsSource="{Binding List}" SelectionMode="Single" FlexLayout.Grow="1" Margin="20">
+        
+        <CollectionView ItemsSource="{Binding List}" SelectionMode="None" FlexLayout.Grow="1" Margin="20">
+            <CollectionView.Header BackgroundColor="Blue">
+                <Label Text="Previous feedback" TextDecorations="Underline" HorizontalOptions="Center" TextTransform="Uppercase" FontAttributes="Bold"/>
+            </CollectionView.Header>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type models:Feedback}">
                     <VerticalStackLayout Spacing="5" Padding="8,0,0,0">
                         <Grid ColumnDefinitions="7*,4*">
-                            <Label Grid.Column="0" Text="{Binding Title}" FontSize="20" FontAttributes="Bold" VerticalOptions="End" LineBreakMode="TailTruncation"/>
+                            <Label Grid.Column="0" Text="{Binding Title}" FontSize="16" FontAttributes="Bold" VerticalOptions="End" LineBreakMode="TailTruncation"/>
                             <Label Grid.Column="1" Text="{Binding CreatedAt}" FontSize="12" VerticalOptions="End"/>
                         </Grid>
-                        <Label Text="{Binding Description}" FontAttributes="Italic" FontSize="18" LineBreakMode="TailTruncation"/>
+                        <Label Text="{Binding Description}" FontAttributes="Italic" FontSize="12" LineBreakMode="TailTruncation"/>
                     </VerticalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

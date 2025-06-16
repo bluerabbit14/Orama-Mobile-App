@@ -6,4 +6,8 @@ public partial class ProfilePage : ContentPage
 	{
 		InitializeComponent();
 	}
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+		DisplayAlert("Profile","will config later", "Ok");
+    }
 }

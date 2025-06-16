@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Orama_MAUI.Pages.ContactusPage"
-             Title="Contact Us">
-    <ScrollView VerticalScrollBarVisibility="Always" HorizontalScrollBarVisibility="Never" Padding="10">
-        <StackLayout>
-            
-        </StackLayout>
+             x:Class="Orama_MAUI.Pages.ContactusPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="15">
+            <Frame>
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="📞 Contact Support" FontSize="25" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Need help? We're here for you." FontSize="16" TextColor="Gray" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+            </Frame>
+
+
+            <!-- Email Support -->
+            <Label Text="🔹 Email Support" FontSize="18" FontAttributes="Bold" TextColor="Black" />
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Send us your query at:" FontSize="14" />
+                <Label Text="📧 14jamesparzival@gmail.com" FontSize="14" TextColor="Blue">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label Text="Please include:" FontSize="14" TextColor="Gray" />
+                <Label Text="• Your name and registered email" FontSize="14" TextColor="Gray" />
+                <Label Text="• A brief description of the issue" FontSize="14" TextColor="Gray" />
+                <Label Text="• A brief description of the issue" FontSize="14" TextColor="Gray" />
+                <Label Text="• Screenshots (if possible)" FontSize="14" TextColor="Gray" />
+            </VerticalStackLayout>
+       
+            <!-- In-App Help -->
+            <Label Text="🔹 In-App Help" FontSize="18" FontAttributes="Bold" TextColor="Black" />
+            <VerticalStackLayout Spacing="2">
+                <Label Text="Go to:" FontSize="14" TextColor="Gray" />
+                <Label Text="Settings > Help  Support > Contact Us" FontSize="14" TextColor="Gray" />
+                <Label Text="Submit your issue directly from the app." FontSize="14" TextColor="Gray" />
+            </VerticalStackLayout>
+
+            <!-- Support Hours -->
+            <Label Text="🕒 Support Hours" FontSize="18" FontAttributes="Bold" TextColor="Black" />
+            <Label Text="Mon – Fri: 9:00 AM – 6:00 PM" FontSize="14" TextColor="Gray" />
+            <Label Text="We aim to respond within 24 hours." FontSize="14" TextColor="Gray" />
+
+            <!-- Before You Contact Us -->
+            <Label Text="🧠 Before You Contact Us" FontSize="18" FontAttributes="Bold" TextColor="Black" />
+
+            <VerticalStackLayout>
+                <Label Text="Try these first:" FontSize="14" TextColor="Gray" />
+                <Label Text="• Restart the app" FontSize="14" TextColor="Gray" />
+                <Label Text="• Check your internet connection\n• Update to the latest app version" FontSize="14" TextColor="Gray" />
+                <Label Text="• Update to the latest app version" FontSize="14" TextColor="Gray" />
+            </VerticalStackLayout>
+         
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

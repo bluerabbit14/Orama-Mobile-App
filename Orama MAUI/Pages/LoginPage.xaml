@@ -21,13 +21,13 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="0" Padding="5">
+            <Frame Grid.Row="0" Padding="5" x:Name="IdEntryFrame">
                 <HorizontalStackLayout>
                     <Image Source="email.png" WidthRequest="25"/>
-                    <Entry x:Name="EmailEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                    <Entry x:Name="IdEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Grid.Row="1"  Padding="5">
+            <Frame Grid.Row="1"  Padding="5" x:Name="passwordEntryFrame">
                 <HorizontalStackLayout>
                     <Image Source="password.png" WidthRequest="25"/>
                     <Entry x:Name="PasswordEntry" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
@@ -44,16 +44,24 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
-            
-            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0"/>
+
+            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0" Color="blue" CheckedChanged="Checkbox_CheckedChanged"/>
             
             <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="I confirm that I have read, consent and agree to Orama's "/>
-                        <Span Text="Terms of Use" TextDecorations="Underline"/>
+                        <Span Text="Terms of Use" TextDecorations="Underline" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TermCondition_Tapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
                         <Span Text=" and "/>
-                        <Span Text="Privacy Policy" TextDecorations="Underline"/>
+                        <Span Text="Privacy Policy" TextDecorations="Underline" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="PrivacyPolicy_Tapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
                         <Span Text="."/>
                     </FormattedString>
                 </Label.FormattedText>
@@ -82,18 +90,18 @@
                 <BoxView WidthRequest="160" HeightRequest="1" />
             </HorizontalStackLayout>
 
-            <Frame x:Name="Google_signin_option" IsEnabled="False">
+            <Frame x:Name="Google_signin_option">
                 <HorizontalStackLayout HorizontalOptions="Center" >
                     <Image Source="google.png" WidthRequest="17"/>
-                    <Label Text="Sign in with Google" FontSize="17" Margin="10,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer />
-                        </Label.GestureRecognizers>
-                    </Label>
+                    <Label Text="Sign in with Google" FontSize="18" Margin="10,0" FontAttributes="Bold"/>
                 </HorizontalStackLayout>
-            </Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoogleSignIn_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame> 
 
-            <Label Text="Contact Us" TextColor="Blue" HorizontalOptions="Center" Margin="8" FontSize="16" TextDecorations="Underline">
+
+            <Label Text="Contact Us" TextColor="Blue" HorizontalOptions="Center" Margin="8" FontSize="16">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Contactus_Tapped"/>
                 </Label.GestureRecognizers>
