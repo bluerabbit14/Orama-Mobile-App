@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Orama_API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class OramaMig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,7 +17,7 @@ namespace Orama_API.Migrations
                 {
                     SubscriptionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1000, 1"),
-                    SubscriptionPlan = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PlanName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETDATE()"),
@@ -61,9 +61,9 @@ namespace Orama_API.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subscriptions_SubscriptionPlan",
+                name: "IX_Subscriptions_PlanName",
                 table: "Subscriptions",
-                column: "SubscriptionPlan",
+                column: "PlanName",
                 unique: true);
 
             migrationBuilder.CreateIndex(

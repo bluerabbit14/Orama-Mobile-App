@@ -2,7 +2,7 @@
 {
     public class RegisterSubscriptionDTO
     {
-        public string SubscriptionPlan { get; set; } = string.Empty;
+        public string PlanName { get; set; } = string.Empty;
         public string? Description { get; set; }
         public decimal Price { get; set; }
         public int? MaxUsers { get; set; }

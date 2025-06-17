@@ -6,30 +6,6 @@ D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Orama API.deps.json
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Orama API.runtimeconfig.json
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Orama API.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Orama API.pdb
-D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.OpenApi.dll
-D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.csproj.AssemblyReference.cache
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.GeneratedMSBuildEditorConfig.editorconfig
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.AssemblyInfoInputs.cache
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.AssemblyInfo.cs
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.csproj.CoreCompileInputs.cache
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.MvcApplicationPartsAssemblyInfo.cs
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.MvcApplicationPartsAssemblyInfo.cache
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.sourcelink.json
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\scopedcss\bundle\Orama API.styles.css
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.build.json
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.development.json
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.csproj.Up2Date
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.dll
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\refint\Orama API.dll
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.pdb
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.genruntimeconfig.cache
-D:\Orama Mobile App\Orama API\obj\Debug\net8.0\ref\Orama API.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\AutoMapper.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Azure.Core.dll
@@ -62,9 +38,13 @@ D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.d
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Orama Mobile App\Orama API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\System.ClientModel.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\System.CodeDom.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\System.Composition.AttributedModel.dll
@@ -144,3 +124,23 @@ D:\Orama Mobile App\Orama API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Dr
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Orama Mobile App\Orama API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.csproj.AssemblyReference.cache
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.AssemblyInfoInputs.cache
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.AssemblyInfo.cs
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.csproj.CoreCompileInputs.cache
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.MvcApplicationPartsAssemblyInfo.cs
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.MvcApplicationPartsAssemblyInfo.cache
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.sourcelink.json
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\scopedcss\bundle\Orama API.styles.css
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.build.json
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.development.json
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.csproj.Up2Date
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.dll
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\refint\Orama API.dll
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.pdb
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\Orama API.genruntimeconfig.cache
+D:\Orama Mobile App\Orama API\obj\Debug\net8.0\ref\Orama API.dll

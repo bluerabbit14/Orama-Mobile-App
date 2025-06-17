@@ -2,7 +2,7 @@
   {
     "ContainingType": "Orama_API.Controllers.AuthenticationController",
     "Method": "ForgotPassword",
-    "RelativePath": "api/Authentication/forgot-password",
+    "RelativePath": "api/Authentication/ForgotPassword",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "Orama_API.Controllers.AuthenticationController",
     "Method": "Login",
-    "RelativePath": "api/Authentication/login",
+    "RelativePath": "api/Authentication/Login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -34,7 +34,7 @@
   {
     "ContainingType": "Orama_API.Controllers.AuthenticationController",
     "Method": "Register",
-    "RelativePath": "api/Authentication/register",
+    "RelativePath": "api/Authentication/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -50,7 +50,7 @@
   {
     "ContainingType": "Orama_API.Controllers.AuthenticationController",
     "Method": "Verify",
-    "RelativePath": "api/Authentication/verify",
+    "RelativePath": "api/Authentication/Verify",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -65,18 +65,29 @@
   },
   {
     "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "GetSubscriptions",
-    "RelativePath": "api/Subscription",
-    "HttpMethod": "GET",
+    "Method": "ActivateSubscription",
+    "RelativePath": "api/Subscription/Activate/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Orama_API.Model.DTO.UpdateStatusDTO",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Orama_API.Controllers.SubscriptionController",
     "Method": "CreateUser",
-    "RelativePath": "api/Subscription",
+    "RelativePath": "api/Subscription/Create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -91,8 +102,34 @@
   },
   {
     "ContainingType": "Orama_API.Controllers.SubscriptionController",
+    "Method": "DeleteSubscription",
+    "RelativePath": "api/Subscription/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Orama_API.Controllers.SubscriptionController",
+    "Method": "GetSubscriptions",
+    "RelativePath": "api/Subscription/Fetch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Orama_API.Controllers.SubscriptionController",
     "Method": "GetSubscriptionByID",
-    "RelativePath": "api/Subscription/{id}",
+    "RelativePath": "api/Subscription/FetchById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -108,7 +145,7 @@
   {
     "ContainingType": "Orama_API.Controllers.SubscriptionController",
     "Method": "UpdateSubscription",
-    "RelativePath": "api/Subscription/{id}",
+    "RelativePath": "api/Subscription/UpdateSubscription/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -122,101 +159,6 @@
         "Name": "dto",
         "Type": "Orama_API.Model.DTO.UpdateSubscriptionDTO",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "DeleteSubscription",
-    "RelativePath": "api/Subscription/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "ActivateSubscription",
-    "RelativePath": "api/Subscription/{id}/Activate",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "GetUsers",
-    "RelativePath": "api/User",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "GetUserByID",
-    "RelativePath": "api/User/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "UpdateUser",
-    "RelativePath": "api/User/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Orama_API.Model.DTO.UserUpdateDTO",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "GetUserByIdentifier",
-    "RelativePath": "api/User/by-identifier",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "identifier",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -239,6 +181,48 @@
   },
   {
     "ContainingType": "Orama_API.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/User/Fetch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Orama_API.Controllers.UserController",
+    "Method": "GetUserByID",
+    "RelativePath": "api/User/FetchById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Orama_API.Controllers.UserController",
+    "Method": "GetUserByIdentifier",
+    "RelativePath": "api/User/FetchByIdentifier",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "identifier",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Orama_API.Controllers.UserController",
     "Method": "UpdatePassword",
     "RelativePath": "api/User/UpdatePassword/{credential}",
     "HttpMethod": "PUT",
@@ -253,6 +237,27 @@
       {
         "Name": "credential",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Orama_API.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User/UpdateUser/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Orama_API.Model.DTO.UserUpdateDTO",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

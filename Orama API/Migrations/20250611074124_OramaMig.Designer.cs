@@ -12,8 +12,8 @@ using Orama_API.Data;
 namespace Orama_API.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20250604083839_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250611074124_OramaMig")]
+    partial class OramaMig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,17 +67,17 @@ namespace Orama_API.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(10);
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("SubscriptionPlan")
+                    b.Property<string>("PlanName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("SubscriptionId");
 
-                    b.HasIndex("SubscriptionPlan")
+                    b.HasIndex("PlanName")
                         .IsUnique();
 
                     b.ToTable("Subscriptions", (string)null);

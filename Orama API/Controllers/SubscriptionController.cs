@@ -17,14 +17,14 @@ namespace Orama_API.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("Fetch")]
         public async Task<IActionResult> GetSubscriptions()
         {
             var subscriptions = await _context.Subscription
             .Select(s => new SubscriptionResponseDTO
             {
                 SubscriptionId = s.SubscriptionId,
-                SubscriptionPlan = s.SubscriptionPlan,
+                PlanName = s.PlanName,
                 Description = s.Description,
                 Price = s.Price,
                 CreatedAt = s.CreatedAt,
@@ -37,7 +37,7 @@ namespace Orama_API.Controllers
             .ToListAsync();
             return Ok(subscriptions);
         }
-        [HttpGet("{id}")]
+        [HttpGet("FetchById/{id}")]
         public async Task<IActionResult> GetSubscriptionByID(int id)
         {
             var subscription = await _context.Subscription
@@ -45,7 +45,7 @@ namespace Orama_API.Controllers
                 .Select(s => new SubscriptionResponseDTO
                 {
                     SubscriptionId = s.SubscriptionId,
-                    SubscriptionPlan = s.SubscriptionPlan,
+                    PlanName = s.PlanName,
                     Description = s.Description,
                     Price = s.Price,
                     CreatedAt = s.CreatedAt,
@@ -62,12 +62,12 @@ namespace Orama_API.Controllers
             return Ok(subscription);
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateUser(RegisterSubscriptionDTO dto)
         {
             var subscription = new Subscriptions
             {
-                SubscriptionPlan = dto.SubscriptionPlan,
+                PlanName = dto.PlanName,
                 Description = dto.Description,
                 Price = (decimal)dto.Price,
                 MaxUsers = dto.MaxUsers,
@@ -80,7 +80,7 @@ namespace Orama_API.Controllers
             return CreatedAtAction(nameof(GetSubscriptions), new { id = subscription.SubscriptionId }, subscription);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("UpdateSubscription/{id}")]
         public async Task<IActionResult> UpdateSubscription(int id, UpdateSubscriptionDTO dto)
         {
             var subscription = await _context.Subscription.FindAsync(id);
@@ -89,10 +89,10 @@ namespace Orama_API.Controllers
 
             var updatedFields = new List<string>();
 
-            if (!string.IsNullOrWhiteSpace(dto.SubscriptionPlan) && dto.SubscriptionPlan != subscription.SubscriptionPlan)
+            if (!string.IsNullOrWhiteSpace(dto.PlanName) && dto.PlanName != subscription.PlanName)
             {
-                subscription.SubscriptionPlan = dto.SubscriptionPlan;
-                updatedFields.Add(nameof(dto.SubscriptionPlan));
+                subscription.PlanName = dto.PlanName;
+                updatedFields.Add(nameof(dto.PlanName));
             }
 
             if (!string.IsNullOrWhiteSpace(dto.Description) && dto.Description != subscription.Description)
@@ -141,7 +141,7 @@ namespace Orama_API.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteSubscription(int id)
         {
             var subscription = await _context.Subscription.FindAsync(id);
@@ -155,13 +155,13 @@ namespace Orama_API.Controllers
                 SubscriptionId = id
             });
         }
-        [HttpPut("{id}/Activate")]
-        public async Task<IActionResult> ActivateSubscription(int id)
+        [HttpPut("Activate/{id}")]
+        public async Task<IActionResult> ActivateSubscription(UpdateStatusDTO dto,int id)
         {
             var subscription = await _context.Subscription.FindAsync(id);
             if (subscription == null)
                 return NotFound();
-            subscription.IsActive = true;
+            subscription.IsActive = dto.IsActive;
             subscription.LastUpdated = DateTime.UtcNow;
 
             _context.Subscription.Update(subscription);
@@ -170,6 +170,7 @@ namespace Orama_API.Controllers
             {
                 Message = "Subscription Activated successfully.",
                 SubscriptionId = id
+
             });
 
         }

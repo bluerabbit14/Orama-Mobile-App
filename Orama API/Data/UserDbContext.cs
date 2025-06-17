@@ -77,10 +77,10 @@ namespace Orama_API.Data
                       .ValueGeneratedOnAdd()
                       .UseIdentityColumn(seed: 1000, increment: 1); ; // For IDENTITY(1000,1)
 
-                entity.Property(s => s.SubscriptionPlan)
+                entity.Property(s => s.PlanName)
                       .IsRequired()
                       .HasMaxLength(100);
-                entity.HasIndex(s => s.SubscriptionPlan)
+                entity.HasIndex(s => s.PlanName)
                       .IsUnique();
 
                 entity.Property(s => s.Description)
@@ -108,7 +108,6 @@ namespace Orama_API.Data
                 entity.Property(s => s.MaxStorage)
                       .HasDefaultValue(1000); // in MB
             });
-
         }
     }
 }

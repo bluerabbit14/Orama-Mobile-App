@@ -17,7 +17,7 @@ namespace Orama_API.Controllers
             _context = context;
         }
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDTO dto)
         {
             // Validate input
@@ -60,7 +60,7 @@ namespace Orama_API.Controllers
 
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDTO dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Identifier) || string.IsNullOrWhiteSpace(dto.PasswordHash))
@@ -74,7 +74,7 @@ namespace Orama_API.Controllers
             return Ok(user);
         }
 
-        [HttpPost("forgot-password")]
+        [HttpPost("ForgotPassword")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordDTO dto)
         {
             if (string.IsNullOrWhiteSpace(dto.EmailOrPhone))
@@ -86,7 +86,7 @@ namespace Orama_API.Controllers
             return Ok(user);
         }
 
-        [HttpPost("verify")]
+        [HttpPost("Verify")]
         public async Task<IActionResult> Verify([FromBody] OTPVerifyDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.EmailOrPhone) || string.IsNullOrWhiteSpace(dto.OtpCode))

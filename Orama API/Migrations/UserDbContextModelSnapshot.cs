@@ -64,17 +64,17 @@ namespace Orama_API.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(10);
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("SubscriptionPlan")
+                    b.Property<string>("PlanName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("SubscriptionId");
 
-                    b.HasIndex("SubscriptionPlan")
+                    b.HasIndex("PlanName")
                         .IsUnique();
 
                     b.ToTable("Subscriptions", (string)null);

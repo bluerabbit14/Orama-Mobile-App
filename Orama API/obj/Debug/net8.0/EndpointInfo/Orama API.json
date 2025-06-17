@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Authentication/register": {
+    "/api/Authentication/Register": {
       "post": {
         "tags": [
           "Authentication"
@@ -36,7 +36,7 @@
         }
       }
     },
-    "/api/Authentication/login": {
+    "/api/Authentication/Login": {
       "post": {
         "tags": [
           "Authentication"
@@ -67,7 +67,7 @@
         }
       }
     },
-    "/api/Authentication/forgot-password": {
+    "/api/Authentication/ForgotPassword": {
       "post": {
         "tags": [
           "Authentication"
@@ -98,7 +98,7 @@
         }
       }
     },
-    "/api/Authentication/verify": {
+    "/api/Authentication/Verify": {
       "post": {
         "tags": [
           "Authentication"
@@ -129,7 +129,7 @@
         }
       }
     },
-    "/api/Subscription": {
+    "/api/Subscription/Fetch": {
       "get": {
         "tags": [
           "Subscription"
@@ -139,38 +139,9 @@
             "description": "OK"
           }
         }
-      },
-      "post": {
-        "tags": [
-          "Subscription"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterSubscriptionDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterSubscriptionDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterSubscriptionDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
-    "/api/Subscription/{id}": {
+    "/api/Subscription/FetchById/{id}": {
       "get": {
         "tags": [
           "Subscription"
@@ -191,7 +162,40 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Subscription/Create": {
+      "post": {
+        "tags": [
+          "Subscription"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterSubscriptionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterSubscriptionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterSubscriptionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Subscription/UpdateSubscription/{id}": {
       "put": {
         "tags": [
           "Subscription"
@@ -231,7 +235,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Subscription/Delete/{id}": {
       "delete": {
         "tags": [
           "Subscription"
@@ -254,7 +260,7 @@
         }
       }
     },
-    "/api/Subscription/{id}/Activate": {
+    "/api/Subscription/Activate/{id}": {
       "put": {
         "tags": [
           "Subscription"
@@ -270,6 +276,25 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStatusDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStatusDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStatusDTO"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -277,7 +302,7 @@
         }
       }
     },
-    "/api/User": {
+    "/api/User/Fetch": {
       "get": {
         "tags": [
           "User"
@@ -289,7 +314,7 @@
         }
       }
     },
-    "/api/User/{id}": {
+    "/api/User/FetchById/{id}": {
       "get": {
         "tags": [
           "User"
@@ -310,7 +335,30 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/User/FetchByIdentifier": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/UpdateUser/{id}": {
       "put": {
         "tags": [
           "User"
@@ -345,27 +393,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/by-identifier": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "identifier",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -509,7 +536,7 @@
       "RegisterSubscriptionDTO": {
         "type": "object",
         "properties": {
-          "subscriptionPlan": {
+          "planName": {
             "type": "string",
             "nullable": true
           },
@@ -534,10 +561,19 @@
         },
         "additionalProperties": false
       },
+      "UpdateStatusDTO": {
+        "type": "object",
+        "properties": {
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateSubscriptionDTO": {
         "type": "object",
         "properties": {
-          "subscriptionPlan": {
+          "planName": {
             "type": "string",
             "nullable": true
           },

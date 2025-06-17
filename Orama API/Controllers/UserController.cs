@@ -16,7 +16,7 @@ namespace Orama_API.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("Fetch")]
         public async Task<IActionResult> GetUsers()
         {
             var users = await _context.User
@@ -35,13 +35,13 @@ namespace Orama_API.Controllers
                 IsActive = u.IsActive,
                 Role = u.Role,
                 SubscriptionId = u.SubscriptionId,
-                SubscriptionPlan = u.Subscription != null ? u.Subscription.SubscriptionPlan : null
+                SubscriptionPlan = u.Subscription != null ? u.Subscription.PlanName : null
             })
             .ToListAsync();
             return Ok(users);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("FetchById/{id}")]
         public async Task<IActionResult> GetUserByID(Guid id)
         {
             var user = await _context.User
@@ -60,7 +60,7 @@ namespace Orama_API.Controllers
                     IsActive = u.IsActive,
                     Role = u.Role,
                     SubscriptionId = u.SubscriptionId,
-                    SubscriptionPlan = u.Subscription != null ? u.Subscription.SubscriptionPlan : null
+                    SubscriptionPlan = u.Subscription != null ? u.Subscription.PlanName : null
                 })
                 .FirstOrDefaultAsync();
             if (user == null)
@@ -68,7 +68,7 @@ namespace Orama_API.Controllers
             return Ok(user);
         }
 
-        [HttpGet("by-identifier")]
+        [HttpGet("FetchByIdentifier")]
         public async Task<IActionResult> GetUserByIdentifier([FromQuery] string identifier)
         {
             var user = await _context.User
@@ -87,7 +87,7 @@ namespace Orama_API.Controllers
                     IsActive = u.IsActive,
                     Role = u.Role,
                     SubscriptionId = u.SubscriptionId,
-                    SubscriptionPlan = u.Subscription != null ? u.Subscription.SubscriptionPlan : null
+                    SubscriptionPlan = u.Subscription != null ? u.Subscription.PlanName : null
                 })
                 .FirstOrDefaultAsync();
 
@@ -96,7 +96,7 @@ namespace Orama_API.Controllers
             return Ok(user);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("UpdateUser/{id}")]
         public async Task<IActionResult> UpdateUser(UserUpdateDTO dto, Guid id)
         { 
             var user = await _context.User.FindAsync(id);
