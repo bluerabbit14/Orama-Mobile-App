@@ -1,57 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Orama_MAUI.Pages.HomePage">
-     <ScrollView>
-        <VerticalStackLayout Padding="10">
+             x:Class="Orama_MAUI.Pages.HomePage"
+             xmlns:vm="clr-namespace:Orama_MAUI.ViewModels"
+             x:DataType="vm:HomeViewModel"
+             xmlns:models="clr-namespace:Orama_MAUI.Models">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="10,0,10,20">
+
+            <!--Search bar -->
+            <Frame Padding="0" Margin="10" HasShadow="True">
+                <SearchBar  Margin="2" FontSize="20" Placeholder="Search" PlaceholderColor="{AppThemeBinding Light=Gray,Dark=White}"  CancelButtonColor="{AppThemeBinding Light=Red,Dark=White}"
+                            SearchButtonPressed="SearchBar_SearchButtonPressed" TextChanged="SearchBar_TextChanged" Background="{AppThemeBinding Light=white, Dark=Gray}"/>
+            </Frame>
+            <CollectionView x:Name="SearchResultsView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
             <!--  ✅ CarouselView with ItemsSource bound  -->
             <CarouselView x:Name="HomeCarousel"
-                          ItemsSource="{Binding Items}"
+                          ItemsSource="{Binding CarouselItems}"
+                          HeightRequest="180"
                           IndicatorView="HomeIndicator"
-                          HeightRequest="140">
+                          Position="{Binding CurrentPosition, Mode=TwoWay}">
                 <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame WidthRequest="350">
-                            <Label Text="{Binding Url}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="25"/>
-                        </Frame>
+                    <DataTemplate x:DataType="{x:Type models:HomeCarouselItem}">
+                        <Grid Padding="0" WidthRequest="370">
+                            <VerticalStackLayout ZIndex="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="20">
+                                <Label Text="{Binding Title}" TextColor="white" FontSize="25" FontAttributes="Bold"/>
+                                <Label Text="{Binding Description}" TextColor="white" FontSize="12"/>
+                            </VerticalStackLayout>
+                            
+                            <Image Source="{Binding Url}" Rotation="-90" WidthRequest="270" HeightRequest="370" Margin="0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding BindingContext.OpenCarouselLinkCommand, Source={x:Reference HomeCarousel}}" CommandParameter="{Binding}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-            <!-- ✅ IndicatorView must be linked to Carousel  --> 
-             <IndicatorView x:Name="HomeIndicator"
-                           HorizontalOptions="Center"
-                           Margin="10"
-                           IndicatorColor="gray"
-                           SelectedIndicatorColor="black"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Frame Grid.Row="0" Grid.Column="0" Margin="10" HeightRequest="180">
-                    <Label Text="card 1"/>
-                </Frame>
-                <Frame Grid.Row="0" Grid.Column="1" Margin="10" HeightRequest="180">
-                    <Label Text="card 2"/>
-                </Frame>
-                <Frame Grid.Row="1" Grid.Column="0" Margin="10" HeightRequest="180">
-                    <Label Text="card 3"/>
-                </Frame>
-                <Frame Grid.Row="1" Grid.Column="1" Margin="10" HeightRequest="180">
-                    <Label Text="card 4"/>
-                </Frame>
-                <Frame Grid.Row="2" Grid.Column="0" Margin="10" HeightRequest="180">
-                    <Label Text="card 5"/>
-                </Frame>
-                <Frame Grid.Row="2" Grid.Column="1" Margin="10" HeightRequest="180">
-                    <Label Text="card 6"/>
-                </Frame>
-            </Grid>
+            <!-- ✅ IndicatorView must be linked to Carousel  -->
+             <IndicatorView x:Name="HomeIndicator" HorizontalOptions="Center" Margin="10"
+                           IndicatorColor="{AppThemeBinding Light=Gray,Dark=White}"  SelectedIndicatorColor="{AppThemeBinding Light=Black,Dark=Red}"/>
+           
         </VerticalStackLayout>
     </ScrollView> 
 </ContentPage>

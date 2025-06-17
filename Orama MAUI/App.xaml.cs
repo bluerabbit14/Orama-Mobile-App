@@ -7,16 +7,14 @@ namespace Orama_MAUI
         public App()
         {
             InitializeComponent();
-            bool isLoggedIn = Preferences.Get("IsLoggedIn", false);
 
+            Application.Current.UserAppTheme = AppTheme.Light;
+
+            bool isLoggedIn = Preferences.Get("IsLoggedIn", false);
             if (isLoggedIn)
-            {
                 MainPage = new AppShell(); // Go to main app
-            }
             else
-            {
                 MainPage = new NavigationPage(new LoginPage()); // Ask to log in
-            }
         }
     }
 }

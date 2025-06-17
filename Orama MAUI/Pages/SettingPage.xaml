@@ -4,6 +4,8 @@
              x:Class="Orama_MAUI.Pages.SettingPage"
              Title="Setting">
     <VerticalStackLayout>
-        
+        <Frame>
+            <Label Text="Help and Support"/>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>

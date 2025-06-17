@@ -72,8 +72,8 @@
                         <Entry x:Name="PasswordField" Placeholder="Enter your Password" Text="{Binding Password}" IsReadOnly="False"/>
                     </HorizontalStackLayout>
                 </Frame>
+                
             </VerticalStackLayout>
-
 
         </VerticalStackLayout>
     </ScrollView>

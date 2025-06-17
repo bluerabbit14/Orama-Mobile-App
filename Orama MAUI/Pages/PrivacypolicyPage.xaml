@@ -5,7 +5,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="20,0,20,50" Spacing="12">
             <Frame>
-                <Label Text="📜 Privacy Policy" FontSize="24"  FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" />
+                <Label Text="📜 Privacy Policy" FontSize="24"  FontAttributes="Bold" HorizontalTextAlignment="Center" />
             </Frame>
             <VerticalStackLayout Spacing="2">
                 <Label Text="Effective Date: 13 June, 2025" FontSize="14" />
@@ -52,11 +52,11 @@
             <Label Text="We may update this Privacy Policy. Changes will be posted in the app or on our website." FontSize="14" />
 
             <Label Text="9. Contact" FontAttributes="Bold" FontSize="18" />
-            <VerticalStackLayout>
+            <VerticalStackLayout Margin="2">
                 <Label Text="For privacy-related questions" FontSize="14"/>
                 <HorizontalStackLayout Spacing="5">
                     <Label Text="contact:" FontSize="14" />
-                    <Label Text="📧 14jamesparzival@gmail.com" FontSize="14" TextColor="Blue">
+                    <Label Text="📧 14jamesparzival@gmail.com" FontSize="14" TextColor="{AppThemeBinding Light=Blue, Dark=White}" >
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                         </Label.GestureRecognizers>

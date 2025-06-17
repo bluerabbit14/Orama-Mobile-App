@@ -8,8 +8,8 @@
     <VerticalStackLayout>
         
         <HorizontalStackLayout x:Name="Orama_Title" HorizontalOptions="Center">
-            <Image Source="orama.png" WidthRequest="45"/>
-            <Label Text="Orama" TextColor="Black" FontSize="40"/>
+            <Image Source="{AppThemeBinding Light=Orama_light.png,Dark=Orama_dark.png}" WidthRequest="45"/>
+            <Label Text="Orama" FontSize="40"/>
         </HorizontalStackLayout>
        
         <VerticalStackLayout x:Name="Page_instruction" Padding="25">
@@ -23,13 +23,13 @@
             </Grid.RowDefinitions>
             <Frame Grid.Row="0" Padding="5" x:Name="IdEntryFrame">
                 <HorizontalStackLayout>
-                    <Image Source="email.png" WidthRequest="25"/>
+                    <Image Source="{AppThemeBinding Light=email_light.png,Dark=email_dark.png}" WidthRequest="25"/>
                     <Entry x:Name="IdEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
             <Frame Grid.Row="1"  Padding="5" x:Name="passwordEntryFrame">
                 <HorizontalStackLayout>
-                    <Image Source="password.png" WidthRequest="25"/>
+                    <Image Source="{AppThemeBinding Light=password_light.png,Dark=Password_dark.png}" WidthRequest="25"/>
                     <Entry x:Name="PasswordEntry" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
@@ -45,19 +45,19 @@
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
 
-            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0" Color="blue" CheckedChanged="Checkbox_CheckedChanged"/>
+            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0" Color="{AppThemeBinding Light=Blue, Dark=White}"  CheckedChanged="Checkbox_CheckedChanged"/>
             
             <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="I confirm that I have read, consent and agree to Orama's "/>
-                        <Span Text="Terms of Use" TextDecorations="Underline" TextColor="Blue">
+                        <Span Text="Terms of Use" TextDecorations="Underline" TextColor="{AppThemeBinding Light=Blue, Dark=White}">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TermCondition_Tapped"/>
                             </Span.GestureRecognizers>
                         </Span>
                         <Span Text=" and "/>
-                        <Span Text="Privacy Policy" TextDecorations="Underline" TextColor="Blue">
+                        <Span Text="Privacy Policy" TextDecorations="Underline" TextColor="{AppThemeBinding Light=Blue, Dark=White}">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="PrivacyPolicy_Tapped"/>
                             </Span.GestureRecognizers>
@@ -71,12 +71,12 @@
         <Button x:Name="Login_button" Text="Log in" FontSize="20" Clicked="LoginButton_Clicked" Margin="10"/>
         
         <HorizontalStackLayout x:Name="Others" Spacing="150" Margin="10">
-            <Label Text="Forgot password?" TextColor="blue" FontSize="16">
+            <Label Text="Forgot password?" TextColor="{AppThemeBinding Light=Blue, Dark=White}" FontSize="16">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Forgotpassword_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Sign up" TextColor="blue" FontSize="16">
+            <Label Text="Sign up" TextColor="{AppThemeBinding Light=Blue, Dark=White}" FontSize="16">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Signup_Tapped"/>
                 </Label.GestureRecognizers>
@@ -98,10 +98,10 @@
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="GoogleSignIn_Tapped"/>
                 </Frame.GestureRecognizers>
-            </Frame> 
+            </Frame>
 
 
-            <Label Text="Contact Us" TextColor="Blue" HorizontalOptions="Center" Margin="8" FontSize="16">
+            <Label Text="Contact Us" TextColor="{AppThemeBinding Light=Blue, Dark=White}" HorizontalOptions="Center" Margin="8" FontSize="16">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Contactus_Tapped"/>
                 </Label.GestureRecognizers>

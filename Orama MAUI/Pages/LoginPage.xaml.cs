@@ -6,7 +6,8 @@ using SkiaSharp.Views.Maui;
 namespace Orama_MAUI.Pages;
 public partial class LoginPage : ContentPage
 {
-    string id = "14asifcr7@gmail.com";
+    string idEmail = "14asifcr7@gmail.com";
+    string idPhone = "8445941678";
     string pass = "admin@123";
     public LoginPage()
     {
@@ -20,7 +21,6 @@ public partial class LoginPage : ContentPage
     {
         await Navigation.PushAsync(new SignupPage());
     }
-
     private async void LoginButton_Clicked(object sender, EventArgs e)
     {
         var login = new LoginRequest();
@@ -79,14 +79,11 @@ public partial class LoginPage : ContentPage
         //First it will check id is registed or not
         //Second it all authenticat api to login
 
-
-        if (login.Email == id && login.Password == pass)
+        if (( login.Email == idEmail || login.Phone == idPhone ) && login.Password == pass)
         {
             Preferences.Set("IsLoggedIn", true); // Store login status
             Preferences.Set("UserIdValue", IdValue); // Optional
             Preferences.Set("UserPassword", passwordValue); // Optional
-
-            await DisplayAlert("Login", $"Correct Credentials", "Ok");
             Application.Current.MainPage = new AppShell();
         }
         else

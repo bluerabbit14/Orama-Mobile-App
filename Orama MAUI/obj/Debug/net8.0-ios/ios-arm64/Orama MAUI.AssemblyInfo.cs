@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Orama MAUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ddc490c4eee6b2d2095a30452f1a279cdfccfcfa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+3ef19a25ef48945fc777973cd8e48780ddf18e4a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Orama MAUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Orama MAUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,45 +1,43 @@
-using System.Collections.ObjectModel;
+
+using Orama_MAUI.ViewModels;
 using System.Timers;
-using Orama_MAUI.Models;
+
 
 namespace Orama_MAUI.Pages;
 
 public partial class HomePage : ContentPage
 {
-    public ObservableCollection<HomePageCarouselItem> Items { get; set; } = new();
     private System.Timers.Timer _carouselTimer;
     private int _currentIndex = 0;
     private bool _isUserInteracting = false;
+    private HomeViewModel _viewModel;
     public HomePage()
     {
         InitializeComponent();
 
-        Items.Add(new HomePageCarouselItem { Title="", Url="slide 1"});
-        Items.Add(new HomePageCarouselItem { Title = "", Url = "slide 2" });
-        Items.Add(new HomePageCarouselItem { Title = "", Url = "slide 3" });
-        Items.Add(new HomePageCarouselItem { Title = "", Url = "slide 4" });
-        Items.Add(new HomePageCarouselItem { Title = "", Url = "slide 5" });
+        _viewModel = new HomeViewModel();
+        BindingContext = _viewModel;
 
-        BindingContext = this;
         HomeCarousel.PositionChanged += HomeCarousel_PositionChanged;
         StartCarouselTimer();
     }
     private void StartCarouselTimer()
     {
-        _carouselTimer = new System.Timers.Timer(3000);
+        _carouselTimer = new System.Timers.Timer(3000)
+        {
+            AutoReset = true,
+            Enabled = true
+        };
         _carouselTimer.Elapsed += OnCarouselTimerElapsed;
-        _carouselTimer.AutoReset = true;
-        _carouselTimer.Enabled = true;
     }
     private void OnCarouselTimerElapsed(object sender, ElapsedEventArgs e)
     {
-        if (_isUserInteracting) return;
+        if (_isUserInteracting || _viewModel?.CarouselItems == null || _viewModel.CarouselItems.Count == 0)
+            return;
+
         MainThread.BeginInvokeOnMainThread(() =>
         {
-            if (Items.Count == 0)
-                return;
-
-            _currentIndex = (_currentIndex + 1) % Items.Count;
+            _currentIndex = (_currentIndex + 1) % _viewModel.CarouselItems.Count;
             HomeCarousel.Position = _currentIndex;
         });
     }
@@ -51,7 +49,7 @@ public partial class HomePage : ContentPage
         Device.StartTimer(TimeSpan.FromSeconds(3), () =>
         {
             _isUserInteracting = false;
-            return false; // run once
+            return false; // only run once
         });
     }
     protected override void OnDisappearing()
@@ -59,10 +57,17 @@ public partial class HomePage : ContentPage
         base.OnDisappearing();
         _carouselTimer?.Stop();
         _carouselTimer?.Dispose();
-    }
-    public class HomePageCarouselItem
+    }   
+    private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
     {
-        public string? Title { get; set; }
-        public string? Url { get; set; }
+        // Optionally filter your list as user types
+        DisplayAlert("Home","will config later", "Ok");
+    }
+    private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        string query = e.NewTextValue;
+
+        // TODO: Use _viewModel.FilterItems(query) or similar
+        // DisplayAlert("Search Input", query, "OK");
     }
 }
