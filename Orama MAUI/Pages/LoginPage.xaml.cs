@@ -1,27 +1,24 @@
-
 using Orama_MAUI.Models;
-using SkiaSharp;
-using SkiaSharp.Views.Maui;
+using Orama_MAUI.Services;
+using Orama_MAUI.Constants;
 
 namespace Orama_MAUI.Pages;
+
 public partial class LoginPage : ContentPage
 {
-    string idEmail = "14asifcr7@gmail.com";
-    string idPhone = "8445941678";
-    string pass = "admin@123";
     public LoginPage()
     {
         InitializeComponent();
     }
     private async void Forgotpassword_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new ForgotpasswordPage());
+        await Navigation.PushAsync(new ForgotPasswordPage());
     }
     private async void Signup_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new SignupPage());
+        await Navigation.PushAsync(new SignUpPage());
     }
-    private async void LoginButton_Clicked(object sender, EventArgs e)
+    private void LoginButton_Clicked(object sender, EventArgs e)
     {
         var login = new LoginRequest();
 
@@ -32,7 +29,7 @@ public partial class LoginPage : ContentPage
         if (string.IsNullOrWhiteSpace(IdValue))
         {
             IdEntryFrame.BorderColor = Colors.Red;
-            DisplayAlert("Login", "Email/Phone cannot be an empty field", "ok");
+            DisplayAlert("Login", "Email cannot be an empty field", "Ok");
             return;
         }
         if (!string.IsNullOrWhiteSpace(IdValue))
@@ -42,87 +39,60 @@ public partial class LoginPage : ContentPage
         if (string.IsNullOrWhiteSpace(passwordValue))
         {
             passwordEntryFrame.BorderColor = Colors.Red;
-            DisplayAlert("Login", "Password cannot be an empty field", "ok");
+            DisplayAlert("Login", "Password cannot be an empty field", "Ok");
             return;
         }
         if (!string.IsNullOrWhiteSpace(passwordValue))
         {
             passwordEntryFrame.BorderColor = Colors.Gray;
         }
-        if (!checkboxValue)
-        {
-            Checkbox.Color = Colors.Red;
-            DisplayAlert("Login", "Check and Confirm you agree our terms", "ok");
-            return;
-        }
-
         if (IdValue.Contains("@") && IdValue.Contains("."))
         {
             login.Email = IdValue;
             login.Password = passwordValue;
             login.Checkbox = checkboxValue;
-            //await DisplayAlert("Login", $"Email: {login.Email}\nPassword: {login.Password}\nCheckbox: {login.Checkbox}", "Ok");
         }
         else
         {
-            if (IdValue.Length != 10 || !IdValue.All(char.IsDigit))
-            {
-                await DisplayAlert("Login", $"{IdValue} is not a proper number", "Ok");
-                return;
-            }
-            login.Phone = IdValue;
-            login.Password = passwordValue;
-            login.Checkbox = checkboxValue;
-            //await DisplayAlert("Login", $"Phone: {login.Phone}\nPassword: {login.Password}\nCheckbox: {login.Checkbox}", "Ok");
+            DisplayAlert("Login", "Enter a valid Email", "Ok");
+            return;
         }
-        //API Integration will be done here !!
-        //First it will check id is registed or not
-        //Second it all authenticat api to login
 
-        if (( login.Email == idEmail || login.Phone == idPhone ) && login.Password == pass)
+        if (login.Email == Constants.Constants.IdValue && login.Password == Constants.Constants.Pass)
         {
-            Preferences.Set("IsLoggedIn", true); // Store login status
-            Preferences.Set("UserIdValue", IdValue); // Optional
-            Preferences.Set("UserPassword", passwordValue); // Optional
-            Application.Current.MainPage = new AppShell();
+            if (checkboxValue)
+            {
+                UserPreferencesService.Save("IsLoggedIn", true);
+                UserPreferencesService.Save("UserIdValue", "IdValue");
+                UserPreferencesService.Save("UserPassword", "passwordValue");
+                Application.Current.MainPage = new AppShell();
+            }
+            else
+                Application.Current.MainPage = new AppShell();
         }
         else
         {
-            await DisplayAlert("Login", $"Incorrect Credentials", "Ok");
+            DisplayAlert("Login", "Incorrect Credentials", "Ok");
         }
     }
     private void Contactus_Tapped(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new ContactusPage());
+        Navigation.PushAsync(new ContactUsPage());
     }
-    private async void Terms_Policy_Tapped(object sender, TappedEventArgs e)
+    private void Terms_Policy_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new PrivacypolicyPage());
+        Navigation.PushAsync(new PrivacyPolicyPage());
     }
-    private async void PrivacyPolicy_Tapped(object sender, TappedEventArgs e)
+    private void PrivacyPolicy_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new PrivacypolicyPage());
+        Navigation.PushAsync(new PrivacyPolicyPage());
     }
-    private async void TermCondition_Tapped(object sender, TappedEventArgs e)
+    private void TermCondition_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new TermconditionPage());
+        Navigation.PushAsync(new TermsConditionPage());
     }
-    private void Checkbox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void GoogleSignIn_Tapped(object sender, TappedEventArgs e)
     {
-        bool isChecked = e.Value;
-        if (isChecked)
-        {
-            // Checkbox is checked
-            Checkbox.Color = Colors.Blue;
-        }
-        else
-        {
-            // Checkbox is unchecked
-            Checkbox.Color = Colors.Red;
-        }
-    }
-    private async void GoogleSignIn_Tapped(object sender, TappedEventArgs e)
-    {
-        await DisplayAlert("Login","Google SignIn Congfig later", "Ok");
+        DisplayAlert("Login", "Google SignIn Congfig later", "Ok");
     }
 }

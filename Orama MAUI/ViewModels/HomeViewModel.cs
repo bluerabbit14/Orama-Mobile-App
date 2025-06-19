@@ -20,35 +20,35 @@ namespace Orama_MAUI.ViewModels
                  new HomeCarouselItem 
                  { 
                      Title="Chainsaw Man",
-                     Url="https://i.postimg.cc/dLHHvMZz/Chainsaw-Man.jpg",
+                     ImageUrl="https://i.postimg.cc/dLHHvMZz/Chainsaw-Man.jpg",
                      Description= "\"Chainsaw Man follows Denji, a devil hunter fused with a chainsaw demon, battling grotesque devils in a brutal world.\"",
                      NavigateUrl="https://www.justwatch.com/in/tv-show/chainsaw-man"
                  },
                  new HomeCarouselItem
                  { 
                      Title = "Demon Slayer",
-                     Url = "https://i.postimg.cc/Q9JmyvrY/Demon-Slayer.jpg",
+                     ImageUrl= "https://i.postimg.cc/Q9JmyvrY/Demon-Slayer.jpg",
                      Description= "\"Demon Slayer follows Tanjiro, a kind-hearted boy, battling demons to avenge his family and cure his sister, Nezuko.\"",
                      NavigateUrl="https://www.justwatch.com/in/tv-show/demon-slayer-kimetsu-no-yaiba/season-1"
                  },
                  new HomeCarouselItem
                  { 
                      Title = "One Piece",
-                     Url = "https://i.postimg.cc/hJxp9fZB/OnePiece.jpg",
+                     ImageUrl= "https://i.postimg.cc/hJxp9fZB/OnePiece.jpg",
                      Description ="\"One Piece follows Luffy and his pirate crew on an epic journey to find the legendary treasure, the One Piece.\"",
                      NavigateUrl="https://www.justwatch.com/in/tv-show/one-piece"
                  },
                  new HomeCarouselItem
                  {
                      Title = "Weathering With You",
-                     Url = "https://i.postimg.cc/BPZp9NSS/weathering-With-You.jpg",
+                     ImageUrl= "https://i.postimg.cc/BPZp9NSS/weathering-With-You.jpg",
                      Description = "\"Weathering With You follows a runaway boy who meets a girl with the mysterious ability to control the weather.\"",
                      NavigateUrl="https://www.justwatch.com/in/movie/weathering-with-you"
                  },
                  new HomeCarouselItem 
                  { 
                      Title = "Your Name", 
-                     Url = "https://i.postimg.cc/k6mwwqLt/YourName.jpg", 
+                     ImageUrl= "https://i.postimg.cc/k6mwwqLt/YourName.jpg", 
                      Description = "\"Your Name is a romantic fantasy anime where two strangers mysteriously swap bodies and form a deep, fateful connection.\"",
                      NavigateUrl = "https://www.justwatch.com/in/movie/your-name"
                  }

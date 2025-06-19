@@ -7,10 +7,13 @@
              xmlns:models="clr-namespace:Orama_MAUI.Models"
              Title="Feedback">
     <VerticalStackLayout>
-
         <VerticalStackLayout Padding="15" Spacing="10" Margin="5">
-            <Label Text="Type of Feedback" FontSize="18"/>
-            <Frame Padding="5">
+
+            <HorizontalStackLayout Spacing="2" VerticalOptions="Center">
+                <Label Text="Type of Feedback" FontSize="18" />
+                <Label Text="*" FontSize="12" TextColor="Red" TranslationY="0" />
+            </HorizontalStackLayout>
+            <Frame Padding="4">
                 <Picker x:Name="PerformanceAreaPicker" FontSize="15" SelectedItem="{Binding Feedback.Type}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -22,13 +25,15 @@
                     </Picker.ItemsSource>
                 </Picker>
             </Frame>
-            <Label Text="Title" FontSize="18"/>
+
+            <HorizontalStackLayout Spacing="2" VerticalOptions="Center">
+                <Label Text="Message" FontSize="18" />
+                <Label Text="*" FontSize="12" TextColor="Red" TranslationY="0" />
+                <Slider/>
+                <Label Text="slider for happines measure"/>
+            </HorizontalStackLayout>
             <Frame Padding="5">
-                <Entry x:Name="TitleEntry" FontSize="15" Text="{Binding Feedback.Title}"/>
-            </Frame>
-            <Label Text="Description" FontSize="18"/>
-            <Frame Padding="5">
-                <Editor x:Name="DescriptionEntry" HeightRequest="140" FontSize="16" AutoSize="TextChanges" Text="{Binding Feedback.Description}"/>
+                <Editor x:Name="DescriptionEntry" HeightRequest="120" FontSize="16" AutoSize="TextChanges" Text="{Binding Feedback.Message}"/>
             </Frame>
             <Button Text="Submit" FontSize="20" Command="{Binding AddCommand}"/>
         </VerticalStackLayout>
@@ -37,24 +42,22 @@
             <CollectionView.Header>
                 <Label Text="Your Last Feedback" HorizontalOptions="Center" FontSize="20"/>
             </CollectionView.Header>
-            
+
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" 
                                  VerticalItemSpacing="10" HorizontalItemSpacing="10"/>
             </CollectionView.ItemsLayout>
-            
+
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type models:Feedback}">
                     <Frame Background="{AppThemeBinding Light=#fff, Dark=Black}" WidthRequest="160" HeightRequest="100">
-                        <VerticalStackLayout >
-                            <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold" VerticalOptions="End" LineBreakMode="TailTruncation"/>
-                            <Label Text="{Binding Description}" FontAttributes="Italic" FontSize="12" LineBreakMode="TailTruncation"/>
-                            <Label Text="{Binding CreatedAt}" FontSize="12" VerticalOptions="End"/>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Message}" FontAttributes="Italic" FontSize="12" LineBreakMode="TailTruncation"/>
+                            <Label Text="{Binding SubmittedAt}" FontSize="12" VerticalOptions="End"/>
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
     </VerticalStackLayout>
 </ContentPage>

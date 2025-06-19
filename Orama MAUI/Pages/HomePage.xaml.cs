@@ -1,7 +1,7 @@
-
+using AndroidX.Core.App;
+using Orama_MAUI.Services;
 using Orama_MAUI.ViewModels;
 using System.Timers;
-
 
 namespace Orama_MAUI.Pages;
 
@@ -57,11 +57,10 @@ public partial class HomePage : ContentPage
         base.OnDisappearing();
         _carouselTimer?.Stop();
         _carouselTimer?.Dispose();
-    }   
+    }
     private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
     {
-        // Optionally filter your list as user types
-        DisplayAlert("Home","will config later", "Ok");
+        DisplayAlert("Home", "will config later", "Ok");
     }
     private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
     {
@@ -69,5 +68,10 @@ public partial class HomePage : ContentPage
 
         // TODO: Use _viewModel.FilterItems(query) or similar
         // DisplayAlert("Search Input", query, "OK");
+    }
+
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        Navigation.PushAsync(new ChatPage());
     }
 }

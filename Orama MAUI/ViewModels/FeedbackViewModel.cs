@@ -17,7 +17,7 @@ partial class FeedbackViewModel: ObservableObject
     [RelayCommand]
     public async Task AddAsync()
     {
-        if (string.IsNullOrWhiteSpace(Feedback.Title) || string.IsNullOrWhiteSpace(Feedback.Description))
+        if (string.IsNullOrWhiteSpace(Feedback.Type) || string.IsNullOrWhiteSpace(Feedback.Message))
         {
             await Application.Current.MainPage.DisplayAlert("Validation Error", "Please enter both Title and Description.", "OK");
             return;

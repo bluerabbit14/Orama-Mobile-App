@@ -1,59 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Orama_MAUI.Pages.ContactusPage">
+             x:Class="Orama_MAUI.Pages.ContactUsPage"
+             Title="Contact Us"
+             Padding="30">
     <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="15">
-            <Frame>
-            <VerticalStackLayout HorizontalOptions="Center">
-                    <Label Text="📞 Contact Support" FontSize="25" FontAttributes="Bold"/>
-                    <Label Text="Need help? We're here for you." FontSize="16" TextColor="{AppThemeBinding Light=Grey, Dark=White}" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
-            </Frame>
-
-
-            <!-- Email Support -->
-            <Label Text="🔹 Email Support" FontSize="18" FontAttributes="Bold"/>
-            <VerticalStackLayout Spacing="5">
-                <Label Text="Send us your query at:" FontSize="14" />
-                <Label Text="📧 14jamesparzival@gmail.com" FontSize="14" TextColor="{AppThemeBinding Light=Blue, Dark=White}">
-                    <Label.GestureRecognizers>
+        <VerticalStackLayout Spacing="30">
+            <Frame >
+                <HorizontalStackLayout HorizontalOptions="Start">
+                    <HorizontalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                    </Label.GestureRecognizers>
-                </Label>
-            </VerticalStackLayout>
-
-            <VerticalStackLayout Margin="5" Spacing="2">
-                <Label Text="Please include:" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="• Your name and registered email" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="• A brief description of the issue" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="• A brief description of the issue" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="• Screenshots (if possible)" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-            </VerticalStackLayout>
-       
-            <!-- In-App Help -->
-            <Label Text="🔹 In-App Help" FontSize="18" FontAttributes="Bold"/>
-            <VerticalStackLayout  Margin="5" Spacing="2">
-                <Label Text="Go to:" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="Settings > Help  Support > Contact Us" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="Submit your issue directly from the app." FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-            </VerticalStackLayout>
-
-            <!-- Support Hours -->
-            <Label Text="🕒 Support Hours" FontSize="18" FontAttributes="Bold" />
-            <Label Text="Mon – Fri: 9:00 AM – 6:00 PM" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}"/>
-            <Label Text="We aim to respond within 24 hours." FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-
-            <!-- Before You Contact Us -->
-            <Label Text="🧠 Before You Contact Us" FontSize="18" FontAttributes="Bold"/>
-
-            <VerticalStackLayout>
-                <Label Text="Try these first:" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="• Restart the app" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="• Check your internet connection" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-                <Label Text="• Update to the latest app version" FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=White}" />
-            </VerticalStackLayout>
-         
+                    </HorizontalStackLayout.GestureRecognizers>
+                    <Label Text="Chat with us" /> 
+                </HorizontalStackLayout>
+            </Frame>
+            <Frame>
+                <VerticalStackLayout Spacing="20">
+                    <VerticalStackLayout>
+                        <Label Text="Contact Us"  FontSize="22"/>
+                        <Label Text="Speak with our customer suppport"/>
+                    </VerticalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="care@Orama.com"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Hour of operations 10 AM - 7 PM"/>
+                    </HorizontalStackLayout>
+                   
+                </VerticalStackLayout>
+            </Frame>
+            <Frame>
+                <VerticalStackLayout Spacing="20">
+                    <HorizontalStackLayout>
+                        <Label Text="Address information"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Sample Address"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                
+            </Frame>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

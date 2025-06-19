@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Orama_MAUI.Pages.PrivacypolicyPage">
+             x:Class="Orama_MAUI.Pages.PrivacyPolicyPage">
     <ScrollView>
         <VerticalStackLayout Padding="20,0,20,50" Spacing="12">
             <Frame>
@@ -12,7 +12,7 @@
                 <Label Text="App Name: Orama" FontSize="14" />
                 <Label Text="Company Name: Orama pvt.ltd." FontSize="14" />
             </VerticalStackLayout>
-           
+
 
             <Label Text="1. Introduction" FontAttributes="Bold" FontSize="18" />
             <Label Text="We value your privacy. This Privacy Policy explains how Orama collects, uses, and protects your personal data when you use our app." FontSize="14" />
@@ -23,7 +23,7 @@
                 <Label Text="• Usage Data: App interactions, device type, OS version, crash logs" FontSize="14" />
                 <Label Text="• Location Data (if applicable): Only with your permission, used for feature enhancement." FontSize="14" />
             </VerticalStackLayout>
-            
+
             <Label Text="3. How We Use Your Data" FontAttributes="Bold" FontSize="18" />
             <Label Text="• To provide and improve our services\n• To personalize your experience\n• To send important updates or service notifications\n• To respond to customer support requests" FontSize="14" />
 
@@ -32,8 +32,8 @@
                 <Label Text="We do not sell your data. We may share it only with:" FontSize="14" />
                 <Label Text="• Trusted service providers (e.g., analytics, email)" FontSize="14" />
                 <Label Text="• Legal authorities if required by law" FontSize="14" />
-               </VerticalStackLayout>
-            
+            </VerticalStackLayout>
+
             <Label Text="5. Data Security" FontAttributes="Bold" FontSize="18" />
             <Label Text="We implement strong measures (encryption, access controls, etc.) to protect your data. However, no system is 100% secure." FontSize="14" />
 
@@ -44,7 +44,7 @@
                 <Label Text="• Opt out of non-essential communications" FontSize="14" />
                 <Label Text="To exercise your rights, email us at: support@yourdomain.com" FontSize="14" />
             </VerticalStackLayout>
-           
+
             <Label Text="7. Children’s Privacy" FontAttributes="Bold" FontSize="18" />
             <Label Text="We do not knowingly collect data from children under 13. If you're a parent and believe your child provided us personal info, contact us to delete it." FontSize="14" />
 
@@ -63,7 +63,7 @@
                     </Label>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-           
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

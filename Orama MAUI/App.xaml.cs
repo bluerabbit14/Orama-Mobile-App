@@ -1,4 +1,5 @@
 ﻿using Orama_MAUI.Pages;
+using Orama_MAUI.Services;
 
 namespace Orama_MAUI
 {
@@ -7,14 +8,17 @@ namespace Orama_MAUI
         public App()
         {
             InitializeComponent();
-
-            Application.Current.UserAppTheme = AppTheme.Light;
-
-            bool isLoggedIn = Preferences.Get("IsLoggedIn", false);
-            if (isLoggedIn)
-                MainPage = new AppShell(); // Go to main app
+            var Theme = UserPreferencesService.Get("AppTheme", "Unspecified");
+            if (Enum.TryParse<AppTheme>(Theme, out var appTheme))
+                Application.Current.UserAppTheme = appTheme;
             else
-                MainPage = new NavigationPage(new LoginPage()); // Ask to log in
+                Application.Current.UserAppTheme = AppTheme.Light;
+
+            bool isLoggedIn = UserPreferencesService.Get("IsLoggedIn", false);
+            MainPage = isLoggedIn
+                ? new AppShell()
+                : new NavigationPage(new LoginPage());
         }
+
     }
 }

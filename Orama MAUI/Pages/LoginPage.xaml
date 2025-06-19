@@ -3,15 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Orama_MAUI.Pages.LoginPage"
              Shell.NavBarIsVisible="False"
-             Padding="25">
-<!--   Login Feature-->
+             Padding="30">
     <VerticalStackLayout>
-        
+
         <HorizontalStackLayout x:Name="Orama_Title" HorizontalOptions="Center">
             <Image Source="{AppThemeBinding Light=Orama_light.png,Dark=Orama_dark.png}" WidthRequest="45"/>
             <Label Text="Orama" FontSize="40"/>
         </HorizontalStackLayout>
-       
+
         <VerticalStackLayout x:Name="Page_instruction" Padding="25">
             <Label Text="Only login via Email,Google,or +91 phone number is supported in your region." FontSize="13"/>
         </VerticalStackLayout>
@@ -24,7 +23,7 @@
             <Frame Grid.Row="0" Padding="5" x:Name="IdEntryFrame">
                 <HorizontalStackLayout>
                     <Image Source="{AppThemeBinding Light=email_light.png,Dark=email_dark.png}" WidthRequest="25"/>
-                    <Entry x:Name="IdEntry" Placeholder="Email/ +91 Phone number" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                    <Entry x:Name="IdEntry" Placeholder="Email" Keyboard="Email" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
             <Frame Grid.Row="1"  Padding="5" x:Name="passwordEntryFrame">
@@ -34,42 +33,15 @@
                 </HorizontalStackLayout>
             </Frame>
         </Grid>
-        
-        <Grid x:Name="Term_and_Condition_Checkbox" Padding="10" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="9*"/>
-            </Grid.ColumnDefinitions>
 
-            <CheckBox x:Name="Checkbox" Grid.Row="0" Grid.Column="0" Color="{AppThemeBinding Light=Blue, Dark=White}"  CheckedChanged="Checkbox_CheckedChanged"/>
-            
-            <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="I confirm that I have read, consent and agree to Orama's "/>
-                        <Span Text="Terms of Use" TextDecorations="Underline" TextColor="{AppThemeBinding Light=Blue, Dark=White}">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TermCondition_Tapped"/>
-                            </Span.GestureRecognizers>
-                        </Span>
-                        <Span Text=" and "/>
-                        <Span Text="Privacy Policy" TextDecorations="Underline" TextColor="{AppThemeBinding Light=Blue, Dark=White}">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="PrivacyPolicy_Tapped"/>
-                            </Span.GestureRecognizers>
-                        </Span>
-                        <Span Text="."/>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-        </Grid>
+        <HorizontalStackLayout >
+            <CheckBox x:Name="Checkbox"/>
+            <Label Text="Remember me" FontSize="16" VerticalTextAlignment="Center"/>
+        </HorizontalStackLayout>
+
 
         <Button x:Name="Login_button" Text="Log in" FontSize="20" Clicked="LoginButton_Clicked" Margin="10"/>
-        
+
         <HorizontalStackLayout x:Name="Others" Spacing="150" Margin="10">
             <Label Text="Forgot password?" TextColor="{AppThemeBinding Light=Blue, Dark=White}" FontSize="16">
                 <Label.GestureRecognizers>

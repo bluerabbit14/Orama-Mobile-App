@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Orama_MAUI.Pages.SignupPage"
+             x:Class="Orama_MAUI.Pages.SignUpPage"
              Shell.NavBarIsVisible="False"
              Padding="30">
-<!-- Sign up Feature-->    
     <VerticalStackLayout>
 
         <HorizontalStackLayout x:Name="Orama_Title" HorizontalOptions="Center">
@@ -22,27 +21,32 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="0" Padding="5" x:Name="EmailEntryFrame">
+            <Frame Grid.Row="0" Padding="5" x:Name="NameEntryFrame">
                 <HorizontalStackLayout>
-                    <Image Source="{AppThemeBinding Light=email_light.png,Dark=email_dark.png}" WidthRequest="25"/>
-                    <Entry x:Name="IdEntry" Placeholder="Email/ +91 Phone Number" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                    <Image Source="{AppThemeBinding Light=profile1_light.png,Dark=profile1_dark.png}" WidthRequest="20"/>
+                    <Entry x:Name="NameEntry" Placeholder="Name" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Grid.Row="1" Padding="5" x:Name="PasswordEntry1Frame">
+            <Frame Grid.Row="1" Padding="5" x:Name="EmailEntryFrame">
+                <HorizontalStackLayout>
+                    <Image Source="{AppThemeBinding Light=email_light.png,Dark=email_dark.png}" WidthRequest="25"/>
+                    <Entry x:Name="IdEntry" Placeholder="Email" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never" WidthRequest="310"/>
+                </HorizontalStackLayout>
+            </Frame>
+            <Frame Grid.Row="2" Padding="5" x:Name="PasswordEntry1Frame">
                 <HorizontalStackLayout>
                     <Image Source="{AppThemeBinding Light=password_light.png,Dark=password_dark.png}" WidthRequest="25"/>
                     <Entry x:Name="PasswordEntry1" Placeholder="Password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            <Frame Grid.Row="2" Padding="5" x:Name="PasswordEntry2Frame">
+            <Frame Grid.Row="3" Padding="5" x:Name="PasswordEntry2Frame">
                 <HorizontalStackLayout>
                     <Image Source="{AppThemeBinding Light=password_light.png,Dark=password_dark.png}" WidthRequest="25"/>
                     <Entry x:Name="PasswordEntry2" Placeholder="Confirm password" Keyboard="Text" FontSize="20" ClearButtonVisibility="Never"  WidthRequest="310"/>
                 </HorizontalStackLayout>
             </Frame>
-            
+
         </Grid>
 
         <Grid x:Name="Term_and_Condition_Checkbox" Padding="10" >

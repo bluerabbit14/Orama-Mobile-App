@@ -2,78 +2,273 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Orama_MAUI.Pages.ProfilePage"
-             Title="Profile">
+             Shell.NavBarHasShadow="False"
+             Shell.NavBarIsVisible="False">
     <ScrollView>
-        <VerticalStackLayout Padding="30,10">
-            <!-- Profile Picture Section -->
-                <Frame Padding="0" HeightRequest="140" WidthRequest="140"
-                       CornerRadius="70" HasShadow="True" BackgroundColor="White">
-                    <Image Aspect="AspectFill" HeightRequest="120" WidthRequest="120"/>
-                </Frame>
-            <Button Text="Edit Photo" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#007AFF"
-                    BackgroundColor="Transparent" Clicked="Button_Clicked"/>
-            <VerticalStackLayout Spacing="10">
-                <!-- Name -->
-                <Frame Padding="10,0">
-                    <HorizontalStackLayout>
-                        <Label Text="Name: " VerticalOptions="Center"/>
-                        <Entry x:Name="NameField" Placeholder="Enter your name" Text="{Binding Name}" IsReadOnly="False"/>
-                    </HorizontalStackLayout>
-                </Frame>
-                <!-- Email -->
-                <Frame Padding="10,0">
-                    <HorizontalStackLayout>
-                        <Label Text="Email: " VerticalOptions="Center"/>
-                        <Entry x:Name="EmailField" Placeholder="Enter your email" Text="{Binding Email}" IsReadOnly="False"/>
-                    </HorizontalStackLayout>
-                </Frame>
-                <!-- Phone -->
-                <Frame Padding="10,0">
-                    <HorizontalStackLayout>
-                        <Label Text="Phone: " VerticalOptions="Center"/>
-                        <Entry x:Name="PhoneField" Placeholder="Enter you phone" Text="{Binding Phone}" IsReadOnly="False"/>
-                    </HorizontalStackLayout>
-                </Frame>
-                <!-- Address -->
-                <Frame Padding="10,0">
-                    <HorizontalStackLayout>
-                        <Label Text="Address: " VerticalOptions="Center"/>
-                        <Entry x:Name="AddressField" Placeholder="Enter your Addess" Text="{Binding Address}" IsReadOnly="False"/>
-                    </HorizontalStackLayout>
-                </Frame>
-                <Grid ColumnSpacing="10">
+        <VerticalStackLayout Padding="10">
+            <Frame x:Name="seven" Margin="10,5" BackgroundColor="#512BD4" IsEnabled="false">
+                <Grid ColumnSpacing="20">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <!-- Date of Birth -->
-                    <Frame Grid.Row="0" Grid.Column="0" Padding="10,0">
-                        <HorizontalStackLayout>
-                            <Label Text="DOB: " VerticalOptions="Center"/>
-                            <DatePicker x:Name="DOBPicker" Date="{Binding Dob}" IsEnabled="True"/>
-                        </HorizontalStackLayout>
+                    <Frame Grid.Column="0" Margin="0" CornerRadius="35" WidthRequest="70" HeightRequest="70" VerticalOptions="Center">
+                        <Frame BackgroundColor="#512BD4" CornerRadius="30" WidthRequest="60" HeightRequest="60">
+                            <Frame CornerRadius="27" WidthRequest="54" HeightRequest="54" Padding="0">
+                                <Label Text="A" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </Frame>
+                        </Frame>
                     </Frame>
-                    <!-- Gender Picker -->
-                    <Frame Grid.Row="0" Grid.Column="1" Padding="10,0">
-                        <HorizontalStackLayout>
-                            <Label Text="Gender: " VerticalOptions="Center"/>
-                            <Picker x:Name="genderPicker" Title="Select gender"  IsEnabled="True">
-                                <Picker.Items>
-                                    <x:String>Male</x:String>
-                                    <x:String>Female</x:String>
-                                </Picker.Items>
-                            </Picker>
+                    <VerticalStackLayout Grid.Column="1" Margin="0" VerticalOptions="Center" Padding="5">
+                        <Label Text="Asif Abbas" TextColor="White" FontSize="16"/>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="21 years" TextColor="White"  FontSize="16"/>
+                            <Label Text="•" TextColor="White"  FontSize="16"/>
+                            <Label Text="Male" TextColor="White"  FontSize="16"/>
                         </HorizontalStackLayout>
-                    </Frame>
+                        <Label Text="Gautam buddha Nagar" LineBreakMode="TailTruncation" TextColor="White"  FontSize="16"/>
+                    </VerticalStackLayout>
+                    <Image Grid.Column="2" VerticalOptions="Start" Source="pen_dark.png" HeightRequest="22" Margin="0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </Grid>
-                <Frame Padding="10,0">
-                    <HorizontalStackLayout>
-                        <Label Text="Password: " VerticalOptions="Center"/>
-                        <Entry x:Name="PasswordField" Placeholder="Enter your Password" Text="{Binding Password}" IsReadOnly="False"/>
-                    </HorizontalStackLayout>
-                </Frame>
-                
-            </VerticalStackLayout>
+            </Frame>
+            <Frame x:Name="six" Margin="10,5" IsEnabled="False">
+                <VerticalStackLayout Spacing="15">
+                    <Grid x:Name="OramaCash">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=orama_light.png,Dark=orama_dark.png}" HeightRequest="26"/>
+                        <HorizontalStackLayout Grid.Column="1">
+                            <Label Text="Orama Cash" FontSize="20" FontFamily="Typeface"/>
+                        </HorizontalStackLayout>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="OramaMembership">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=crown_light.png,Dark=crown_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="Orama Membership" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="GiftCard">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=gift_light.png,Dark=gift_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="Gift Card" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="ReferEarn">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=rupee_light.png,Dark=rupee_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="Refer &amp; Earn" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame x:Name="five" Margin="10,5" IsEnabled="False">
+                <VerticalStackLayout Spacing="15">
+                    <Grid x:Name="ProfileDetails">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=profile2_light.png,Dark=profile2_dark.png}" HeightRequest="26"/>
+                        <HorizontalStackLayout Grid.Column="1">
+                            <Label Text="Profile Details" FontSize="20" FontFamily="Typeface"/>
+                        </HorizontalStackLayout>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="MyAddress">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=address_light.png,Dark=address_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="My Addresses" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="Notifications">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=notification_light.png,Dark=notification_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="Notifications" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame x:Name="four" Margin="10,5" IsEnabled="False">
+                <VerticalStackLayout Spacing="15">
+                    <Grid x:Name="Feedback">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Feedback_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=feedback_light.png,Dark=feedback_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="Feedback" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="Theme">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Theme_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="{AppThemeBinding Light=sun.png,Dark=moon.png}" Grid.Column="0" HeightRequest="26" VerticalOptions="Start"/>
+                        <Label Grid.Column="1" Text="Theme" FontSize="20" FontFamily="Typeface"/>
+
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame x:Name="three" Margin="10,5">
+                <VerticalStackLayout Spacing="15">
+                    <Grid x:Name="AboutUs">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Aboutus_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=about_light.png,Dark=about_dark.png}" HeightRequest="26"/>
+                        <HorizontalStackLayout Grid.Column="1">
+                            <Label Text="About us" FontSize="20" FontFamily="Typeface"/>
+                        </HorizontalStackLayout>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="FAQ">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="FAQ_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=faq_light.png,Dark=faq_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="FAQ" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                    <Grid x:Name="ContactUs">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ContactUs_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=call1_light.png,Dark=call1_dark.png}" HeightRequest="26"/>
+                        <Label Grid.Column="1" Text="Contact us" FontSize="20" FontFamily="Typeface"/>
+                        <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame x:Name="two" Margin="10,5">
+                <VerticalStackLayout>
+                    <Grid x:Name="Policies">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Policies_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Grid.Column="0" Source="{AppThemeBinding Light=policies_light.png,Dark=policies_dark.png}" HeightRequest="26"/>
+                        <HorizontalStackLayout Grid.Column="1">
+                            <Label Text="Policies" FontSize="20"/>
+                        </HorizontalStackLayout>
+                        <Image x:Name="PoliciesArrow"  Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26" Rotation="90"/>
+                    </Grid>
+                    <VerticalStackLayout x:Name="PoliciesExpand" Spacing="15" IsVisible="False" Margin="0,15,0,0">
+                        <Grid x:Name="Privacy">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Privacy_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Image Grid.Column="0" Source="{AppThemeBinding Light=password_light.png,Dark=policies_dark.png}" HeightRequest="28"/>
+                            <HorizontalStackLayout Grid.Column="1">
+                                <Label Text="Privacy Policy" FontSize="20" FontFamily="Typeface"/>
+                            </HorizontalStackLayout>
+                            <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                        </Grid>
+                        <Grid x:Name="TermsCondition">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TermsConditions_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Image Grid.Column="0" Source="{AppThemeBinding Light=board_light.png,Dark=board_dark.png}" HeightRequest="28"/>
+                            <HorizontalStackLayout Grid.Column="1">
+                                <Label Text="Terms &amp; Conditions" FontSize="20" FontFamily="Typeface"/>
+                            </HorizontalStackLayout>
+                            <Image Grid.Column="2" Source="{AppThemeBinding Light=arrow_next_light.png,Dark=arrow_next_dark.png}" HeightRequest="26"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame x:Name="one" Margin="10,20" Padding="0" BorderColor="red">
+                <Button Text="Logout" TextColor="red" FontSize="18" Background="Transparent" Clicked="LogoutButton_Clicked"/>
+            </Frame>
+            <Label x:Name="AppVersion" Text="Version V.01" HorizontalTextAlignment="Center" Margin="10"/>
 
         </VerticalStackLayout>
     </ScrollView>

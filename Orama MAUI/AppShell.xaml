@@ -4,59 +4,63 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:Orama_MAUI.Pages"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarBackgroundColor="{AppThemeBinding Light='#512BD4', Dark='#512BD4'}"
+    Shell.TabBarForegroundColor="{AppThemeBinding Light='White', Dark='White'}"
+    Shell.TabBarTitleColor="{AppThemeBinding Light=White,Dark=White}"
+    Shell.TabBarUnselectedColor="Gray">
 
     <!-- Flyout Header -->
     <Shell.FlyoutHeader>
-        <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="45" Padding="5">
-            <Label Text="Dashboard" TextColor="White" HorizontalTextAlignment="Center" FontSize="25"/>
-        </VerticalStackLayout>
+        <HorizontalStackLayout Padding="100,10" BackgroundColor="#512BD4">
+            <Image Grid.Column="0" Source="{AppThemeBinding Light=orama_dark.png,Dark=orama_dark.png}" HeightRequest="35" HorizontalOptions="End"/>
+            <Label Grid.Column="1" Text="Orama" FontSize="24" TextColor="#fff" />
+        </HorizontalStackLayout>
     </Shell.FlyoutHeader>
 
     <!-- Flyout Footer -->
+
     <Shell.FlyoutFooter>
-        <VerticalStackLayout Spacing="50">
-            <VerticalStackLayout Spacing="10">
-            <Frame BorderColor="DarkGray" Padding="0" Margin="20,0">
-                <Button Text="Change Theme" Clicked="ThemeButton_Clicked" TextColor="{AppThemeBinding Light=Black,Dark=White}" BackgroundColor="Transparent" FontSize="18"/>
-            </Frame>
-            <Frame BorderColor="Red" Padding="0" Margin="20,0">
-                <Button Text="Logout" Clicked="OnLogoutClicked" TextColor="Red" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
-            </Frame>
-            </VerticalStackLayout>
-            <VerticalStackLayout BackgroundColor="#512BD4" HeightRequest="30" Padding="5">
-                <Label Text="Version v.01" TextColor="White" FontSize="14" HorizontalTextAlignment="Center"/>
-            </VerticalStackLayout>
-        </VerticalStackLayout>
+        <HorizontalStackLayout Padding="10" BackgroundColor="#512BD4">
+            <Label Text="Build By Asif Abbas" FontSize="18" TextColor="#fff" Padding="60,0"/>
+        </HorizontalStackLayout>
     </Shell.FlyoutFooter>
-
-    <!-- ✅ FLYOUT ONLY PAGES -->
-    <FlyoutItem Title="Home" Icon="{AppThemeBinding Light=home_light.png,Dark=home_dark.png}">
-        <ShellContent Title="Home" ContentTemplate="{DataTemplate pages:HomePage}" Route="HomePage" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Profile" Icon="{AppThemeBinding Light=profile1_light,Dark=profile1_dark}">
-        <ShellContent Title="Profile" ContentTemplate="{DataTemplate pages:ProfilePage}" Route="ProfilePage" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Settings" Icon="{AppThemeBinding Light=setting1_light.png,Dark=setting1_dark.png}">
-        <ShellContent Title="Settings" ContentTemplate="{DataTemplate pages:SettingPage}" Route="SettingPage" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Contact Us" Icon="{AppThemeBinding Light=call1_light.png,Dark=call1_dark.png}">
-        <ShellContent Title="Contact Us" ContentTemplate="{DataTemplate pages:ContactusPage}" Route="ContactusPage" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Privacy Policy" Icon="{AppThemeBinding Light=privacy1_light.png,Dark=privacy1_dark.png}">
-        <ShellContent Title="Privacy Policy" ContentTemplate="{DataTemplate pages:PrivacypolicyPage}" Route="PrivacypolicyPage" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Feedback" Icon="{AppThemeBinding Light=feedback_light.png,Dark=feedback_dark.png}">
-        <ShellContent Title="Feedback" ContentTemplate="{DataTemplate pages:FeedbackPage}" Route="FeedBackPage" />
-    </FlyoutItem>
-
-    <!--- <TabBar>
-        <ShellContent Title="Home" ContentTemplate="{DataTemplate pages:HomePage}" Route="HomePage" />
-    </TabBar>  -->
     
+    
+    
+    <!---    <FlyoutItem Title="Home" Icon="{AppThemeBinding Light=home_light.png,Dark=home_dark.png}">  
+                 <ShellContent Title="Home" ContentTemplate="{DataTemplate pages:HomePage}" Route="HomePage" />
+             </FlyoutItem>
+             
+             <FlyoutItem Title="Profile" Icon="{AppThemeBinding Light=profile1_light,Dark=profile1_dark}">
+                 <ShellContent Title="Profile" ContentTemplate="{DataTemplate pages:ProfilePage}" Route="ProfilePage" />
+             </FlyoutItem>
+             
+             <FlyoutItem Title="Settings" Icon="{AppThemeBinding Light=setting1_light.png,Dark=setting1_dark.png}">
+                 <ShellContent Title="Settings" ContentTemplate="{DataTemplate pages:SettingPage}" Route="SettingPage" />
+             </FlyoutItem>
+             
+             <FlyoutItem Title="Contact Us" Icon="{AppThemeBinding Light=call1_light.png,Dark=call1_dark.png}">
+                 <ShellContent Title="Contact Us" ContentTemplate="{DataTemplate pages:ContactUsPage}" Route="ContactUsPage" />
+             </FlyoutItem>
+             
+             <FlyoutItem Title="Privacy Policy" Icon="{AppThemeBinding Light=privacy1_light.png,Dark=privacy1_dark.png}">
+                 <ShellContent Title="Privacy Policy" ContentTemplate="{DataTemplate pages:PrivacyPolicyPage}" Route="PrivacyPolicyPage" />
+             </FlyoutItem>
+             
+             <FlyoutItem Title="Feedback" Icon="{AppThemeBinding Light=feedback_light.png,Dark=feedback_dark.png}">
+                 <ShellContent Title="Feedback" ContentTemplate="{DataTemplate pages:FeedbackPage}" Route="FeedbackPage" />
+             </FlyoutItem>
+             
+             <FlyoutItem Title="FAQ" Icon="{AppThemeBinding Light=faq_light.png,Dark=faq_dark.png}">
+                 <ShellContent Title="FAQ" ContentTemplate="{DataTemplate pages:FAQPage}" Route="FAQPage" />
+             </FlyoutItem>           -->
+
+
+    <!-- ✅ Flyout Tab -->
+    <TabBar>
+        <ShellContent Title="Home" Icon="{AppThemeBinding Light=home_light.png,Dark=home_dark.png}" ContentTemplate="{DataTemplate pages:HomePage}" Route="HomePage"/>
+        <ShellContent Title="Profile" Icon="{AppThemeBinding Light=profile1_light.png,Dark=profile1_dark.png}" ContentTemplate="{DataTemplate pages:ProfilePage}" Route="ProfilePage"/>
+    </TabBar>
+
 </Shell>

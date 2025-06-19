@@ -1,30 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Orama Mobile App\\Orama MAUI\\",
+  "WorkspaceRootPath": "D:\\Orama-Mobile-App\\Orama MAUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama mobile app\\orama maui\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama-mobile-app\\orama maui\\pages\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:pages\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama mobile app\\orama maui\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama-mobile-app\\orama maui\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama mobile app\\orama maui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama mobile app\\orama maui\\pages\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama-mobile-app\\orama maui\\pages\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:pages\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama mobile app\\orama maui\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama-mobile-app\\orama maui\\pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama mobile app\\orama maui\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama-mobile-app\\orama maui\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama-mobile-app\\orama maui\\pages\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:pages\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|d:\\orama-mobile-app\\orama maui\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FB3A8CB3-BF12-1173-044B-E2F5E00D3C2F}|Orama MAUI.csproj|solutionrelative:resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 318,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Colors.xaml",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama MAUI\\Resources\\Styles\\Colors.xaml",
-              "RelativeDocumentMoniker": "Resources\\Styles\\Colors.xaml",
-              "ToolTip": "D:\\Orama Mobile App\\Orama MAUI\\Resources\\Styles\\Colors.xaml",
-              "RelativeToolTip": "Resources\\Styles\\Colors.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama MAUI\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama MAUI\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-17T07:19:02.772Z",
+              "WhenOpened": "2025-06-19T12:59:37.002Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HomePage.xaml",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama MAUI\\Pages\\HomePage.xaml",
-              "RelativeDocumentMoniker": "Pages\\HomePage.xaml",
-              "ToolTip": "D:\\Orama Mobile App\\Orama MAUI\\Pages\\HomePage.xaml",
-              "RelativeToolTip": "Pages\\HomePage.xaml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SignUpPage.xaml",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\SignUpPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\SignUpPage.xaml",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\SignUpPage.xaml",
+              "RelativeToolTip": "Pages\\SignUpPage.xaml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAE0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-17T07:16:03.567Z",
+              "WhenOpened": "2025-06-19T13:36:12.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama MAUI\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "D:\\Orama Mobile App\\Orama MAUI\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "Pages\\LoginPage.xaml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-17T07:09:03.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama MAUI\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "D:\\Orama Mobile App\\Orama MAUI\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T07:08:00.463Z",
+              "WhenOpened": "2025-06-19T13:34:29.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama MAUI\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "AppShell.xaml.cs",
-              "ToolTip": "D:\\Orama Mobile App\\Orama MAUI\\AppShell.xaml.cs",
-              "RelativeToolTip": "AppShell.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCIAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T07:07:05.084Z",
+              "Title": "ProfilePage.xaml",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\ProfilePage.xaml",
+              "RelativeDocumentMoniker": "Pages\\ProfilePage.xaml",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\ProfilePage.xaml",
+              "RelativeToolTip": "Pages\\ProfilePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-19T13:32:48.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama MAUI\\Resources\\Styles\\Colors.xaml",
+              "RelativeDocumentMoniker": "Resources\\Styles\\Colors.xaml",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama MAUI\\Resources\\Styles\\Colors.xaml",
+              "RelativeToolTip": "Resources\\Styles\\Colors.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-19T13:28:18.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama MAUI\\AppShell.xaml",
-              "RelativeDocumentMoniker": "AppShell.xaml",
-              "ToolTip": "D:\\Orama Mobile App\\Orama MAUI\\AppShell.xaml",
-              "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAZAAAAAAAAAA==",
+              "Title": "HomePage.xaml.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\HomePage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\HomePage.xaml.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\HomePage.xaml.cs",
+              "RelativeToolTip": "Pages\\HomePage.xaml.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAYwDQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T13:21:07.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\HomePage.xaml",
+              "RelativeDocumentMoniker": "Pages\\HomePage.xaml",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama MAUI\\Pages\\HomePage.xaml",
+              "RelativeToolTip": "Pages\\HomePage.xaml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-17T07:07:03.789Z",
+              "WhenOpened": "2025-06-19T13:02:00.629Z",
               "EditorCaption": ""
             }
           ]

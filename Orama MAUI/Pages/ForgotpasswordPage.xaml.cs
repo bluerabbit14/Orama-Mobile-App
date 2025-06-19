@@ -1,12 +1,11 @@
-
 namespace Orama_MAUI.Pages;
 
-public partial class ForgotpasswordPage : ContentPage
+public partial class ForgotPasswordPage : ContentPage
 {
-	public ForgotpasswordPage()
-	{
-		InitializeComponent();
-	}
+    public ForgotPasswordPage()
+    {
+        InitializeComponent();
+    }
 
     private void Login_Tapped(object sender, TappedEventArgs e)
     {
@@ -14,7 +13,7 @@ public partial class ForgotpasswordPage : ContentPage
     }
     private void Contactus_Tapped(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new ContactusPage());
+        Navigation.PushAsync(new ContactUsPage());
     }
 
     private void Button_Clicked(object sender, EventArgs e)
@@ -22,7 +21,7 @@ public partial class ForgotpasswordPage : ContentPage
         DisplayAlert("Forgot Password", "will config later", "Ok");
     }
 
-    private async void VerifyButton_Clicked(object sender, EventArgs e)
+    private void VerifyButton_Clicked(object sender, EventArgs e)
     {
         string IdValue = IdEntry.Text?.Trim();
         if (string.IsNullOrWhiteSpace(IdValue))
@@ -43,12 +42,11 @@ public partial class ForgotpasswordPage : ContentPage
             //Second it will send a OTP to the particular email/number
 
 
-            await DisplayAlert("Forgot Password", $"OTP is send to {IdValue}.\nIt is Valid for 5 min", "ok");
+            DisplayAlert("Forgot Password", $"OTP is send to {IdValue}.\nIt is Valid for 5 min", "Ok");
         }
-
         else
         {
-            await DisplayAlert("Forgot Password", $"{IdValue} is neither a Email Address nor a phone number", "ok");
+            DisplayAlert("Forgot Password", $"{IdValue} is neither a Email Address nor a phone number", "Ok");
         }
     }
 }

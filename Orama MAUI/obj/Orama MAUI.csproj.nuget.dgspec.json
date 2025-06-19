@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Orama Mobile App\\Orama MAUI\\Orama MAUI.csproj": {}
+    "D:\\Orama-Mobile-App\\Orama MAUI\\Orama MAUI.csproj": {}
   },
   "projects": {
-    "D:\\Orama Mobile App\\Orama MAUI\\Orama MAUI.csproj": {
+    "D:\\Orama-Mobile-App\\Orama MAUI\\Orama MAUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Orama Mobile App\\Orama MAUI\\Orama MAUI.csproj",
+        "projectUniqueName": "D:\\Orama-Mobile-App\\Orama MAUI\\Orama MAUI.csproj",
         "projectName": "Orama MAUI",
-        "projectPath": "D:\\Orama Mobile App\\Orama MAUI\\Orama MAUI.csproj",
+        "projectPath": "D:\\Orama-Mobile-App\\Orama MAUI\\Orama MAUI.csproj",
         "packagesPath": "C:\\Users\\inest\\.nuget\\packages\\",
-        "outputPath": "D:\\Orama Mobile App\\Orama MAUI\\obj\\",
+        "outputPath": "D:\\Orama-Mobile-App\\Orama MAUI\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
