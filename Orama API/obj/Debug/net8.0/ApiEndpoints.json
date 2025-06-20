@@ -2,14 +2,14 @@
   {
     "ContainingType": "Orama_API.Controllers.AuthenticationController",
     "Method": "ForgotPassword",
-    "RelativePath": "api/Authentication/ForgotPassword",
+    "RelativePath": "api/Authentication/CredentialExist",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Orama_API.Model.DTO.ForgotPasswordDTO",
+        "Type": "Orama_API.Model.DTO.CredentialExistDTO",
         "IsRequired": true
       }
     ],
@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Orama_API.Model.DTO.LoginDTO",
+        "Type": "Orama_API.Model.DTO.LoginRequestDTO",
         "IsRequired": true
       }
     ],
@@ -41,223 +41,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Orama_API.Model.DTO.RegisterDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.AuthenticationController",
-    "Method": "Verify",
-    "RelativePath": "api/Authentication/Verify",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Orama_API.Model.DTO.OTPVerifyDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "ActivateSubscription",
-    "RelativePath": "api/Subscription/Activate/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Orama_API.Model.DTO.UpdateStatusDTO",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "CreateUser",
-    "RelativePath": "api/Subscription/Create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Orama_API.Model.DTO.RegisterSubscriptionDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "DeleteSubscription",
-    "RelativePath": "api/Subscription/Delete/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "GetSubscriptions",
-    "RelativePath": "api/Subscription/Fetch",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "GetSubscriptionByID",
-    "RelativePath": "api/Subscription/FetchById/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.SubscriptionController",
-    "Method": "UpdateSubscription",
-    "RelativePath": "api/Subscription/UpdateSubscription/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "Orama_API.Model.DTO.UpdateSubscriptionDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "DeleteUser",
-    "RelativePath": "api/User/Delete/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "GetUsers",
-    "RelativePath": "api/User/Fetch",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "GetUserByID",
-    "RelativePath": "api/User/FetchById/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "GetUserByIdentifier",
-    "RelativePath": "api/User/FetchByIdentifier",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "identifier",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "UpdatePassword",
-    "RelativePath": "api/User/UpdatePassword/{credential}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Orama_API.Model.DTO.PasswordUpdateDTO",
-        "IsRequired": true
-      },
-      {
-        "Name": "credential",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Orama_API.Controllers.UserController",
-    "Method": "UpdateUser",
-    "RelativePath": "api/User/UpdateUser/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Orama_API.Model.DTO.UserUpdateDTO",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Guid",
+        "Type": "Orama_API.Model.DTO.SignUpRequestDTO",
         "IsRequired": true
       }
     ],

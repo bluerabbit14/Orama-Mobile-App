@@ -11,102 +11,54 @@ namespace Orama_API.Data
         }
 
         //each represent a table in database...
-        public DbSet<Users> User { get; set; } = null!;
-        public DbSet<Subscriptions> Subscription { get; set; } = null!;
+        public DbSet<UserProfile> UserProfilies { get; set; } = null!;
+        public DbSet<UserPassword> UserPasswords { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Users>(entity =>
+            modelBuilder.Entity<UserProfile>(entity =>
             {
-                entity.ToTable("Users");
                 entity.HasKey(u => u.UserId);
                 entity.Property(u => u.UserId)
-                      .HasDefaultValueSql("NEWID()");
+                      .ValueGeneratedOnAdd().UseIdentityColumn(seed:1, increment:1);
 
-                entity.Property(u => u.Email)
-                      .HasMaxLength(255);
-                entity.HasIndex(u => u.Email)
-                      .IsUnique();
-
-                entity.Property(u => u.Phone)
-                      .HasMaxLength(20);
-                entity.HasIndex(u => u.Phone)
-                      .IsUnique();
-
-                entity.Property(u => u.UserName)
-                      .HasMaxLength(100);
-
-                entity.Property(u => u.PasswordHash)
-                      .IsRequired()
-                      .HasMaxLength(512);
-
-                entity.Property(u => u.IsEmailVerified)
-                      .HasDefaultValue(false);
-
-                entity.Property(u => u.IsPhoneVerified)
-                      .HasDefaultValue(false);
-
-                entity.Property(u => u.CreatedAt)
-                      .HasDefaultValueSql("GETDATE()");
-
-                entity.Property(u => u.LastUpdated)
-                      .HasDefaultValueSql("GETDATE()");
-
-                entity.Property(u => u.IsActive)
-                      .HasDefaultValue(true);
-
-                entity.Property(u => u.Role)
-                      .HasMaxLength(20)
-                      .HasDefaultValue("user");
-
-                entity.Property(u => u.SubscriptionId)
-                      .IsRequired(false);
-
-                entity.HasOne(u => u.Subscription)
-                      .WithMany(r => r.Users)
-                      .HasForeignKey(u => u.SubscriptionId)
-                      .OnDelete(DeleteBehavior.SetNull);
+                entity.Property(u => u.ImageUrl);
+                entity.Property(u => u.Name);
+                entity.Property(u => u.Email).HasMaxLength(255);
+                entity.Property(u => u.Phone).HasMaxLength(20);
+                entity.Property(u => u.Address).HasMaxLength(255);
+                entity.Property(u => u.Pincode).HasMaxLength(10);
+                entity.Property(u => u.DateOfBirth);
+                entity.Property(u => u.Gender);
+                entity.Property(u => u.Role).HasMaxLength(20).HasDefaultValue("user");
+                entity.Property(u => u.CreatedAt).HasDefaultValueSql("GETDATE()");
+                entity.Property(u => u.LastUpdated).HasDefaultValueSql("GETDATE()");
+                entity.Property(u => u.LanguagePreference).HasDefaultValue("en-US");
+                entity.Property(u => u.Timezone).HasMaxLength(20);
+                entity.Property(u => u.IsEmailVerified).HasDefaultValue(false);
+                entity.Property(u => u.IsPhoneVerified).HasDefaultValue(false);
+                entity.Property(u => u.IsActive).HasDefaultValue(true);
+                entity.Property(u => u.RememberMe).HasDefaultValue(false);
+                entity.Property(u => u.Bio).HasMaxLength(255);
+                entity.Property(u => u.SocialHandle);
+                entity.Property(u => u.LastLogin).HasDefaultValueSql("GETDATE()");
             });
 
-            modelBuilder.Entity<Subscriptions>(entity =>
+            modelBuilder.Entity<UserPassword>(entity =>
             {
-                entity.ToTable("Subscriptions");
-                entity.HasKey(s => s.SubscriptionId);
-                entity.Property(s => s.SubscriptionId)
-                      .ValueGeneratedOnAdd()
-                      .UseIdentityColumn(seed: 1000, increment: 1); ; // For IDENTITY(1000,1)
+                entity.HasKey(e => e.PasswordId); // Only one primary key
 
-                entity.Property(s => s.PlanName)
-                      .IsRequired()
-                      .HasMaxLength(100);
-                entity.HasIndex(s => s.PlanName)
-                      .IsUnique();
+                entity.Property(e => e.PasswordId)
+                      .ValueGeneratedOnAdd().UseIdentityColumn(seed: 1, increment: 1);
 
-                entity.Property(s => s.Description)
-                      .HasMaxLength(500);
+                // Foreign key from UserPassword → UserProfile
+                entity.HasOne(e => e.userProfile)
+                      .WithOne(u => u.userPassword)
+                      .HasForeignKey<UserPassword>(e => e.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
 
-                entity.Property(s => s.Price)
-                      .HasColumnType("decimal(18,2)")
-                      .IsRequired();
-
-                entity.Property(s => s.CreatedAt)
-                       .HasDefaultValueSql("GETDATE()");
-
-                entity.Property(s => s.LastUpdated)
-                      .HasDefaultValueSql("GETDATE()");
-
-                entity.Property(s => s.IsActive)
-                      .HasDefaultValue(true);
-
-                entity.Property(s => s.ActiveUsers)
-                      .HasDefaultValue(0); // Default active users
-
-                entity.Property(s => s.MaxUsers)
-                      .HasDefaultValue(10); // Default max users
-                 
-                entity.Property(s => s.MaxStorage)
-                      .HasDefaultValue(1000); // in MB
+               
             });
         }
     }

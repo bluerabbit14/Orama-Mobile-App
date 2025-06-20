@@ -1,18 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Orama Mobile App\\Orama API\\",
+  "WorkspaceRootPath": "D:\\Orama-Mobile-App\\Orama API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama mobile app\\orama api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Orama-Mobile-App\\Orama API\\Migrations\\20250620104325_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250620104325_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama mobile app\\orama api\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama-mobile-app\\orama api\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama mobile app\\orama api\\controllers\\subscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:controllers\\subscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama-mobile-app\\orama api\\model\\domain\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:model\\domain\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama-mobile-app\\orama api\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Orama-Mobile-App\\Orama API\\Migrations\\20250620102947_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250620102947_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama-mobile-app\\orama api\\model\\dto\\signuprequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:model\\dto\\signuprequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama-mobile-app\\orama api\\model\\dto\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:model\\dto\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama-mobile-app\\orama api\\model\\dto\\credentialexistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:model\\dto\\credentialexistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|d:\\orama-mobile-app\\orama api\\model\\domain\\userpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11DA2D5-28FB-2550-EC29-BE27A894AD06}|Orama API.csproj|solutionrelative:model\\domain\\userpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +51,118 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama API\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\Orama Mobile App\\Orama API\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Title": "20250620104325_Initial.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Migrations\\20250620104325_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250620104325_Initial.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Migrations\\20250620104325_Initial.cs",
+              "RelativeToolTip": "Migrations\\20250620104325_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:22:50.492Z",
+              "WhenOpened": "2025-06-20T10:43:25.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250620102947_Initial.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Migrations\\20250620102947_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250620102947_Initial.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Migrations\\20250620102947_Initial.cs",
+              "RelativeToolTip": "Migrations\\20250620102947_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:29:47.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama API\\Controllers\\AuthenticationController.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Controllers\\AuthenticationController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthenticationController.cs",
-              "ToolTip": "D:\\Orama Mobile App\\Orama API\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Controllers\\AuthenticationController.cs",
               "RelativeToolTip": "Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T07:12:45.749Z",
+              "WhenOpened": "2025-06-20T10:27:14.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDbContext.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Data\\UserDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\UserDbContext.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Data\\UserDbContext.cs",
+              "RelativeToolTip": "Data\\UserDbContext.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAcwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:22:26.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SignUpRequestDTO.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Model\\DTO\\SignUpRequestDTO.cs",
+              "RelativeDocumentMoniker": "Model\\DTO\\SignUpRequestDTO.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Model\\DTO\\SignUpRequestDTO.cs",
+              "RelativeToolTip": "Model\\DTO\\SignUpRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:20:21.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CredentialExistDTO.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Model\\DTO\\CredentialExistDTO.cs",
+              "RelativeDocumentMoniker": "Model\\DTO\\CredentialExistDTO.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Model\\DTO\\CredentialExistDTO.cs",
+              "RelativeToolTip": "Model\\DTO\\CredentialExistDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:20:18.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginRequestDTO.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Model\\DTO\\LoginRequestDTO.cs",
+              "RelativeDocumentMoniker": "Model\\DTO\\LoginRequestDTO.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Model\\DTO\\LoginRequestDTO.cs",
+              "RelativeToolTip": "Model\\DTO\\LoginRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:13:57.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SubscriptionController.cs",
-              "DocumentMoniker": "D:\\Orama Mobile App\\Orama API\\Controllers\\SubscriptionController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SubscriptionController.cs",
-              "ToolTip": "D:\\Orama Mobile App\\Orama API\\Controllers\\SubscriptionController.cs",
-              "RelativeToolTip": "Controllers\\SubscriptionController.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAowCkAAAAJAAAAAAAAAA==",
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Model\\Domain\\UserProfile.cs",
+              "RelativeDocumentMoniker": "Model\\Domain\\UserProfile.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Model\\Domain\\UserProfile.cs",
+              "RelativeToolTip": "Model\\Domain\\UserProfile.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAzwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:26:36.891Z",
+              "WhenOpened": "2025-06-20T10:13:52.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserPassword.cs",
+              "DocumentMoniker": "D:\\Orama-Mobile-App\\Orama API\\Model\\Domain\\UserPassword.cs",
+              "RelativeDocumentMoniker": "Model\\Domain\\UserPassword.cs",
+              "ToolTip": "D:\\Orama-Mobile-App\\Orama API\\Model\\Domain\\UserPassword.cs",
+              "RelativeToolTip": "Model\\Domain\\UserPassword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:13:26.799Z",
               "EditorCaption": ""
             }
           ]

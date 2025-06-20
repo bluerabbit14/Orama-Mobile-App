@@ -18,17 +18,17 @@ namespace Orama_API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register(RegisterDTO dto)
+        public async Task<IActionResult> Register(SignUpRequestDTO dto)
         {
-            // Validate input
+            // 1. Basic validation
             if (string.IsNullOrWhiteSpace(dto.Email) && string.IsNullOrWhiteSpace(dto.Phone))
                 return BadRequest("Either email or phone is required.");
 
-            if (string.IsNullOrWhiteSpace(dto.PasswordHash))
+            if (string.IsNullOrWhiteSpace(dto.Password))
                 return BadRequest("Password is required.");
 
-            // Check for existing user by email or phone
-            var existingUser = await _context.User.FirstOrDefaultAsync(u =>
+            // 2. Check if user exists
+            var existingUser = await _context.UserProfilies.FirstOrDefaultAsync(u =>
                 (!string.IsNullOrEmpty(dto.Email) && u.Email == dto.Email) ||
                 (!string.IsNullOrEmpty(dto.Phone) && u.Phone == dto.Phone));
 
@@ -37,71 +37,88 @@ namespace Orama_API.Controllers
                 var conflictMessage = (existingUser.Email == dto.Email && !string.IsNullOrEmpty(dto.Email))
                     ? "Email is already registered."
                     : "Phone is already registered.";
-
                 return Conflict(new { Message = conflictMessage });
             }
 
-            // Create and save new user
-            var newUser = new Users
+            // 3. Create new user
+            var newUser = new UserProfile
             {
+                Name = dto.Name,
                 Email = dto.Email,
                 Phone = dto.Phone,
-                PasswordHash = dto.PasswordHash // Consider hashing before saving
+                Gender = dto.Gender,
+                DateOfBirth = dto.DateOfBirth,
+                CreatedAt = DateTime.UtcNow,
+                RememberMe = false, // explicitly false for clarity
+                IsActive = true
             };
 
-            _context.User.Add(newUser);
+            await _context.UserProfilies.AddAsync(newUser);
+            await _context.SaveChangesAsync(); // Save here to get newUser.UserId for FK
+
+            // 4. Create password record
+            var salt = PasswordHelper.GenerateSalt(); // assume this exists
+            var hashedPassword = PasswordHelper.HashPassword(dto.Password, salt);
+
+            var newUserPassword = new UserPassword
+            {
+                UserId = newUser.UserId, // foreign key
+                PasswordHash = hashedPassword,
+                Salt = salt,
+                CreatedAt = DateTime.UtcNow,
+                LastUpdated = DateTime.UtcNow
+            };
+
+            await _context.UserPasswords.AddAsync(newUserPassword);
             await _context.SaveChangesAsync();
+
+            // ✅ Do NOT add newUser again — it was already saved
 
             return Ok(new
             {
                 Message = "User registered successfully.",
                 UserId = newUser.UserId
             });
-
         }
+
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login(LoginDTO dto)
+        public async Task<IActionResult> Login(LoginRequestDTO dto)
         {
-            if (string.IsNullOrWhiteSpace(dto.Identifier) || string.IsNullOrWhiteSpace(dto.PasswordHash))
+            if (string.IsNullOrWhiteSpace(dto.Credentials) || string.IsNullOrWhiteSpace(dto.Password))
                 return BadRequest("Email/Phone and Password are required.");
-            var user = await _context.User
-                .Include(u => u.Subscription)
-                .FirstOrDefaultAsync(u =>
-                    (u.Email == dto.Identifier || u.Phone == dto.Identifier) && u.PasswordHash == dto.PasswordHash);
-            if (user == null)
+
+            var user = await _context.UserProfilies
+            .FirstOrDefaultAsync(u => u.Email == dto.Credentials || u.Phone == dto.Credentials);
+
+            if (user == null) return Unauthorized("Invalid credentials.");
+
+            var userPassword = await _context.UserPasswords.FirstOrDefaultAsync(p => p.UserId == user.UserId);
+            if (userPassword == null) return Unauthorized("Invalid credentials.");
+
+
+            var hashedPassword = PasswordHelper.HashPassword(dto.Password, userPassword.Salt);
+
+            if (hashedPassword != userPassword.PasswordHash)
                 return Unauthorized("Invalid credentials.");
+
+            //Update 'Remember me', 'LastLogin'
+            user.RememberMe = dto.RememberMe;
+            user.LastLogin = dto.LastLogin;
+
             return Ok(user);
         }
 
-        [HttpPost("ForgotPassword")]
-        public async Task<IActionResult> ForgotPassword(ForgotPasswordDTO dto)
+        [HttpPost("CredentialExist")]
+        public async Task<IActionResult> ForgotPassword(CredentialExistDTO dto)
         {
-            if (string.IsNullOrWhiteSpace(dto.EmailOrPhone))
+            if (string.IsNullOrWhiteSpace(dto.Credentials))
                 return BadRequest("Email or Phone is required.");
-            var user = await _context.User
-                .FirstOrDefaultAsync(u => u.Email == dto.EmailOrPhone || u.Phone == dto.EmailOrPhone);
+            var user = await _context.UserProfilies
+                .FirstOrDefaultAsync(u => u.Email == dto.Credentials || u.Phone == dto.Credentials);
             if (user == null)
                 return NotFound("User not found.");
-            return Ok(user);
-        }
-
-        [HttpPost("Verify")]
-        public async Task<IActionResult> Verify([FromBody] OTPVerifyDto dto)
-        {
-            if (string.IsNullOrWhiteSpace(dto.EmailOrPhone) || string.IsNullOrWhiteSpace(dto.OtpCode))
-                return BadRequest("Email/Phone and OtpCode are required.");
-
-            var user = await _context.User
-                .Include(u => u.Subscription)
-                .FirstOrDefaultAsync(u =>
-                    u.Email == dto.EmailOrPhone || u.Phone == dto.EmailOrPhone);
-            //have config otpcode checker too table have no otp column config it just return true and just email/phone exist or not
-
-            if (user == null)
-                return NotFound("User not found.");
-
-            return Ok(user);
+            return Ok("User Exist");
         }
     }
 }
